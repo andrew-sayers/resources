@@ -255,3 +255,41 @@
         Chapel Hill,
         NC 27517
       GPS co-ordinates: 35.904673699064354, -79.01186058561848
+
+-
+  name: Dr. Alina Patke
+  last updated: 2022-03-24
+  url: https://www.bbe.caltech.edu/people/alina-patke
+  specialist type: researcher
+  referral type: direct
+  procedure type: confirmed
+  procedure: |
+    1. contact process - how to get in touch?
+    2. enrollment process - fill out a questionnaire?  In-person talk?
+    3. you will be asked to fill out a sleep diary like the one shown
+    4. research goals - how will you use the data?
+    5. visible results - what information will the participant receive?
+  blurb: |
+    Dr. Patke specialises in Biochemistry, Structural, and Molecular Cell Biology; Developmental Biology and Genetics; and Neuroscience.
+  locations:
+    -
+      name: Caltech Division of Biology and Biological Engineering
+      url: https://www.caltech.edu/map/campus/w-m-keck-engineering-laboratories
+      address: |
+        1200 East California Boulevard
+        Pasadena, California 91125
+      GPS co-ordinates: 34.138420581508775, -118.12474313078803
+  forms:
+    -
+      layout: calendar
+      sharing status: shared with consent
+      page duration: 14 days
+      total pages: 1
+      start time: Midnight
+      in-bed marker: "&darr;"
+      out-of-bed marker: "&uarr;"
+      sleep marker: ▬
+      gallery:
+        -
+          url: /resources/forms/Dr. Alina Patke/Sleep_Log_without_data.pdf
+          thumb: /resources/thumbs/Dr. Alina Patke.jpg
