@@ -109,7 +109,7 @@ body:
     id: procedure
     attributes:
       label: Journey
-      default: |
+      value: |
         This is usually something like:
         1. how to book an appointment
         2. anything you need to do before your appointment
@@ -163,12 +163,16 @@ body:
     attributes:
       label: Forms and reports
       description: Names of forms and reports, plus uploaded files or instructions to find them through the website
-      placeholder: |
-        Short-term sleep diary
-        Go to https://www.teasdale.fd/, click "patient forms", then click "short-term sleep diary"
+      value: |
+        For each form, add something like:
 
-        Example sleep report
-        See attached PDF (for instructions, see beneath this text box)
+        name: Short-term sleep diary
+        address: https://www.teasdale.fd/short-term.pdf
+        how to find: Go to https://www.teasdale.fd/, click "patient forms", then click "short-term sleep diary"
+
+        name: Example sleep report
+        address: attached to this comment
+        (see beneath this text box for how to attach documents)
 
   - type: textarea
     id: comments
