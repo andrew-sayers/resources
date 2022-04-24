@@ -1,0 +1,13 @@
+{
+  "name": "Sleep as Android",
+  "business_model": "Paid app with free trial",
+  "description": "An alarm clock and sleep cycle tracker for Android phones.\n",
+  "file_format": "/core/src/SleepAsAndroid/",
+  "last_updated": "2022-04-01",
+  "platforms": [
+    "android"
+  ],
+  "procedure": "1. [download trial version for Android](https://play.google.com/store/apps/details?id=com.urbandroid.sleep&hl=en_GB&gl=US)\n   * see [the limitations of the free version](https://docs.sleep.urbandroid.org/general/plan.html#free-sleep-as-android)\n2. optionally [upgrade to the full version](https://docs.sleep.urbandroid.org/general/plan.html#full-sleep-as-android)\n",
+  "thumb": "/resources/thumbs/Sleep as Android.jpg",
+  "url": "https://sleep.urbandroid.org/"
+}

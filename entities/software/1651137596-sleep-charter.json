@@ -1,0 +1,50 @@
+{
+  "name": "Sleep Charter",
+  "business_model": "Free (closed source)",
+  "description": "A free tool that generates sleep charts from CSV files.\n",
+  "last_updated": "2022-04-01",
+  "platforms": [
+    "website"
+  ],
+  "procedure": "1. [go to the site](https://sleepcharter.z13.web.core.windows.net/)\n2. upload CSV files for supported devices\n",
+  "reports": [
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/SleepCharter/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/SleepCharter/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepCharter/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/SleepCharter/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepCharter/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/SleepCharter/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepCharter/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/SleepCharter/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "inbed_marker": "(none)",
+      "layout": "calendar",
+      "name": "Universal Charter",
+      "outofbed_marker": "(none)",
+      "page_duration": "variable",
+      "sleep_marker": "▮",
+      "start_page": 1,
+      "start_time": "midnight",
+      "thumb": "/resources/thumbs/SleepCharter/simple.jpg",
+      "total_pages": 1,
+      "url": "/resources/images/SleepCharter/simple.png"
+    }
+  ],
+  "thumb": "/resources/thumbs/SleepCharter.jpg",
+  "url": "https://sleepcharter.z13.web.core.windows.net/"
+}

@@ -1,0 +1,117 @@
+{
+  "name": "SleepChart 1.0",
+  "business_model": "Free",
+  "description": "A sleep logging application from the early 2000's.\n",
+  "file_format": "/core/src/SleepChart1/",
+  "last_updated": "2022-04-01",
+  "platforms": [
+    "windows"
+  ],
+  "procedure": "1. [download the zip file](http://www.supermemo.org/ftp/sleepchart.zip)\n2. unzip it and run the program\n",
+  "reports": [
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Sleep log/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/SleepChart1/Sleep log/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Sleep log/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/SleepChart1/Sleep log/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Sleep log/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/SleepChart1/Sleep log/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Sleep log/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/SleepChart1/Sleep log/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "inbed_marker": "(none)",
+      "layout": "calendar",
+      "modifiers": {
+        "cyan_bar": "forced awakening",
+        "green_bar": "delayed retirement",
+        "grey_bar": "delayed retirement and forced awakening",
+        "yellow_bar": "selected sleep"
+      },
+      "name": "Sleep log",
+      "outofbed_marker": "(none)",
+      "page_duration": "variable",
+      "sleep_marker": "▬",
+      "start_page": 1,
+      "start_time": "midnight",
+      "thumb": "/resources/thumbs/SleepChart1/Sleep log/simple.jpg",
+      "total_pages": "variable",
+      "url": "/resources/images/SleepChart1/Sleep log/simple.png"
+    },
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Circadian/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/SleepChart1/Circadian/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Circadian/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/SleepChart1/Circadian/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Circadian/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/SleepChart1/Circadian/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Circadian/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/SleepChart1/Circadian/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "layout": "graph",
+      "name": "Circadian",
+      "start_page": 1,
+      "thumb": "/resources/thumbs/SleepChart1/Circadian/simple.jpg",
+      "url": "/resources/images/SleepChart1/Circadian/simple.png"
+    },
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Phase shift/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/SleepChart1/Phase shift/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Phase shift/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/SleepChart1/Phase shift/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Phase shift/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/SleepChart1/Phase shift/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/SleepChart1/Phase shift/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/SleepChart1/Phase shift/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "layout": "graph",
+      "name": "Phase shift",
+      "start_page": 1,
+      "thumb": "/resources/thumbs/SleepChart1/Phase shift/simple.jpg",
+      "url": "/resources/images/SleepChart1/Phase shift/simple.png"
+    }
+  ],
+  "thumb": "/resources/thumbs/SleepChart1.jpg",
+  "url": "https://supermemo.guru/wiki/SleepChart"
+}

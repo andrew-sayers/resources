@@ -1,0 +1,131 @@
+{
+  "name": "The Johns Hopkins Sleep Disorders Center",
+  "admin_contact": "",
+  "description": "Treats conditions such as insomnia, sleep apnea, circadian rhythm disorders, narcolepsy, and restless leg syndrome.",
+  "forms": [
+    {
+      "instructions_to_find": "1. Go to https://www.hopkinsmedicine.org/pulmonary/patient-care/sleep-medicine.html\n2. Click the \"Sleep Survey\" link in the middle of the page\n  * the \"Sleep survey\" link near the end of the page is an unrelated questionnaire\n",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/The Johns Hopkins Sleep-Wake Diary.jpg",
+          "title": "Sleep Survey",
+          "url": "https://www.hopkinsmedicine.org/pulmonary/patient-care/_docs/johns-hopkins-sleep-survey.pdf"
+        }
+      ],
+      "inbed_marker": "(none)",
+      "layout": "calendar",
+      "name": "Sleep Survey",
+      "outofbed_marker": "(none)",
+      "page_duration": "13 days",
+      "sharing_status": "found online",
+      "sleep_marker": "&#x1FB98;",
+      "start_page": 6,
+      "start_time": "Noon",
+      "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/The Johns Hopkins Sleep-Wake Diary.jpg",
+      "total_pages": 1,
+      "url": "https://www.hopkinsmedicine.org/pulmonary/patient-care/_docs/johns-hopkins-sleep-survey.pdf"
+    },
+    {
+      "events": [
+        {
+          "key": "C",
+          "value": "coffee, cola or tea"
+        },
+        {
+          "key": "M",
+          "value": "medicine"
+        },
+        {
+          "key": "A",
+          "value": "alcohol"
+        },
+        {
+          "key": "E",
+          "value": "exercise"
+        }
+      ],
+      "instructions_to_find": "1. Go to https://www.hopkinsmedicine.org/pulmonary/patient-care/sleep-medicine.html\n2. Click the \"Sleep log\" link near the end of the page\n",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/Two week sleep diary.jpg",
+          "title": "Two week sleep diary",
+          "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/medical_services/sleep_disorders_center/sleeplog.pdf"
+        }
+      ],
+      "inbed_marker": "&#x7c;",
+      "layout": "calendar",
+      "name": "Two week sleep diary",
+      "outofbed_marker": "(none)",
+      "page_duration": "2 weeks",
+      "sharing_status": "found online",
+      "sleep_marker": "▬",
+      "start_page": 1,
+      "start_time": "Noon",
+      "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/Two week sleep diary.jpg",
+      "total_pages": 1,
+      "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/medical_services/sleep_disorders_center/sleeplog.pdf"
+    }
+  ],
+  "last_updated": "2022-04-04",
+  "locations": [
+    {
+      "address": "Second Floor\nAsthma and Allergy Building\n5501 Hopkins Bayview Circle\nBaltimore, MD 21224",
+      "gps": [
+        "39.289540445574914",
+        "-76.54892399918245"
+      ],
+      "name": "Bayview Medical Center: Sleep Clinic",
+      "referral_types": [
+        "secondary"
+      ],
+      "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/planning_your_visit/jhbmc-campus-map.pdf"
+    },
+    {
+      "address": "Fourth Floor\nAsthma and Allergy Building\n5501 Hopkins Bayview Circle\nBaltimore, MD 21224",
+      "gps": [
+        "39.289540445574914",
+        "-76.54892399918245"
+      ],
+      "name": "Bayview Medical Center: Sleep Lab",
+      "referral_types": [
+        "secondary"
+      ],
+      "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/planning_your_visit/jhbmc-campus-map.pdf"
+    },
+    {
+      "address": "11085 Little Patuxent Parkway, Suite 210\nMedical Arts Building\nColumbia, MD 21044",
+      "gps": [
+        "39.21410769705409",
+        "-76.88474835693953"
+      ],
+      "name": "Center for Sleep and Wellness",
+      "referral_types": [
+        "direct"
+      ],
+      "url": "https://www.hopkinsmedicine.org/howard_county_general_hospital/services/diagnostics_testing/sleep_center/"
+    }
+  ],
+  "registration_required": false,
+  "appointment_types": [
+    "in-person"
+  ],
+  "booking_required": true,
+  "booking_url": "https://www.hopkinsmedicine.org/howard_county_general_hospital/services/diagnostics_testing/sleep_center/sleep_center_appt.html",
+  "booking_tel": "",
+  "booking_fax": "",
+  "booking_other": "",
+  "before_first": "You may be asked to fill out a sleep diary like one of those shown.",
+  "between_appointments": "",
+  "outcomes": [
+    "diagnose",
+    "treat"
+  ],
+  "outcome_other": "",
+  "procedure_type": "researched",
+  "referral_types": [
+    "secondary",
+    "direct"
+  ],
+  "specialist_type": "physician",
+  "url": "https://www.hopkinsmedicine.org/pulmonary/patient-care/sleep-medicine.html"
+}

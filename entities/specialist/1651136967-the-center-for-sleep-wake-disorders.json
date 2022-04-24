@@ -1,0 +1,127 @@
+{
+  "name": "The Center for Sleep & Wake Disorders",
+  "admin_contact": "",
+  "description": "[The Center for Sleep & Wake Disorders](https://sleepdoc.com/) is an accredited full service sleep center.",
+  "forms": [
+    {
+      "events": [
+        {
+          "key": "A",
+          "value": "alcohol"
+        },
+        {
+          "key": "M",
+          "value": "medication"
+        },
+        {
+          "key": "C",
+          "value": "caffeine"
+        },
+        {
+          "key": "T",
+          "value": "TV"
+        }
+      ],
+      "instructions_to_find": "Go to their [forms and resources page](https://sleepdoc.com/forms)",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adult.jpg",
+          "title": "Adult sleep diary",
+          "url": "https://sleepdoc.com/wp-content/uploads/2019/10/sleep_log.pdf"
+        }
+      ],
+      "inbed_marker": "○",
+      "layout": "calendar",
+      "name": "Adult sleep diary",
+      "outofbed_marker": "🌅",
+      "page_duration": "28 days",
+      "sharing_status": "found online",
+      "sleep_marker": "●―● (asleep) <br/> N〰N (nap)",
+      "start_page": 1,
+      "start_time": "6pm",
+      "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adult.jpg",
+      "total_pages": 1,
+      "url": "https://sleepdoc.com/wp-content/uploads/2019/10/sleep_log.pdf"
+    },
+    {
+      "events": [
+        {
+          "key": "F",
+          "value": "food"
+        },
+        {
+          "key": "M",
+          "value": "medication"
+        },
+        {
+          "key": "C",
+          "value": "caffeine"
+        },
+        {
+          "key": "T",
+          "value": "TV"
+        }
+      ],
+      "instructions_to_find": "Go to their [forms and resources page](https://sleepdoc.com/forms)",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adolescent.jpg",
+          "title": "Adolescent sleep diary",
+          "url": "https://sleepdoc.com/wp-content/uploads/2019/10/Sleep-log-adolescent.pdf"
+        }
+      ],
+      "inbed_marker": "○",
+      "layout": "calendar",
+      "name": "Adolescent sleep diary",
+      "outofbed_marker": "🌅",
+      "page_duration": "28 days",
+      "sharing_status": "found online",
+      "sleep_marker": "●―● (asleep) <br/> N〰N (nap)",
+      "start_page": 1,
+      "start_time": "6pm",
+      "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adolescent.jpg",
+      "total_pages": 1,
+      "url": "https://sleepdoc.com/wp-content/uploads/2019/10/Sleep-log-adolescent.pdf"
+    }
+  ],
+  "last_updated": "2022-03-21",
+  "locations": [
+    {
+      "address": "5454 Wisconsin Ave.,\nSuite 1725 Chevy Chase,\nMD 20815",
+      "gps": [
+        "38.962789082577665",
+        "-77.08724644403178"
+      ],
+      "tel": "301-654-1575",
+      "fax": "301-654-5658",
+      "url": "https://sleepdoc.com/about#facility"
+    }
+  ],
+  "registration_required": true,
+  "registration_tel": "",
+  "registration_fax": "",
+  "registration_other": "You also need to [authorise them to e-mail you](http://sleepdoc.com/emailauth).",
+  "appointment_types": [
+    "in-person"
+  ],
+  "booking_required": true,
+  "booking_url": "https://sleepdoc.com/contact-us",
+  "booking_tel": "",
+  "booking_fax": "",
+  "booking_other": "",
+  "before_first": "You may be asked to fill out a sleep diary like one of those shown.",
+  "between_appointments": "",
+  "outcomes": [
+    "diagnose",
+    "treat",
+    "refer"
+  ],
+  "outcome_other": "",
+  "registration_url": "https://sleepdoc.com/appointments",
+  "procedure_type": "researched",
+  "referral_types": [
+    "direct"
+  ],
+  "specialist_type": "physician",
+  "url": "https://sleepdoc.com/"
+}

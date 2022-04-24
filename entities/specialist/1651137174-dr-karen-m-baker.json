@@ -1,0 +1,112 @@
+{
+  "name": "Dr. Karen M. Baker",
+  "admin_contact": "",
+  "description": "[Dr. Karen M. Baker](http://www.orlandosleep.com/) is a medical director of the Center for Sleep Disorders.",
+  "forms": [
+    {
+      "events": [
+        {
+          "key": "C",
+          "value": "coffee, cola, or tea"
+        },
+        {
+          "key": "M",
+          "value": "medicine"
+        },
+        {
+          "key": "A",
+          "value": "alcohol"
+        },
+        {
+          "key": "E",
+          "value": "exercise"
+        }
+      ],
+      "instructions_to_find": "Click on the &ldquo;Sleep facts & info&rdquo; menu on [her home page](http://www.orlandosleep.com/)",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Dr. Karen M. Baker.jpg",
+          "title": "Dr. Karen M. Baker",
+          "url": "http://www.orlandosleep.com/forms/sleepdiary_v2.pdf"
+        }
+      ],
+      "inbed_marker": "&#x7c;",
+      "layout": "calendar",
+      "outofbed_marker": "(none)",
+      "page_duration": "2 weeks",
+      "sharing_status": "found online",
+      "sleep_marker": "▬",
+      "start_page": 1,
+      "start_time": "Noon",
+      "thumb": "/resources/thumbs/Dr. Karen M. Baker.jpg",
+      "total_pages": 1,
+      "url": "http://www.orlandosleep.com/forms/sleepdiary_v2.pdf"
+    }
+  ],
+  "last_updated": "2022-03-21",
+  "locations": [
+    {
+      "address": "501 E. King Street,\nOrlando,\nFL 32803",
+      "gps": [
+        "28.57840750276319",
+        "-81.3707357577434"
+      ],
+      "name": "Orlando Main Campus"
+    },
+    {
+      "address": "7727 Lake Underhill Road,\nOrlando,\nFlorida 32822",
+      "gps": [
+        "28.540574207076485",
+        "-81.28042285192419"
+      ],
+      "name": "East Orlando"
+    },
+    {
+      "address": "601 East Altamonte Drive,\nAltamonte Springs,\nFlorida 32701",
+      "gps": [
+        "28.666869116019466",
+        "-81.36967268657777"
+      ],
+      "name": "Altamonte"
+    },
+    {
+      "address": "2488 E. Irlo Bronson Memorial Hwy. (US 192/441),\nKissimmee,\nFL 34744",
+      "gps": [
+        "28.277648997831967",
+        "-81.34272387309291"
+      ],
+      "name": "Partin Settlement Health Park"
+    },
+    {
+      "address": "1480 W. Orange Blossom Trail (US 441),\nApopka,\nFL 32712",
+      "gps": [
+        "28.68570028373127",
+        "-81.53690937123332"
+      ],
+      "name": "Apopka"
+    }
+  ],
+  "registration_required": false,
+  "appointment_types": [
+    "in-person"
+  ],
+  "booking_required": true,
+  "booking_url": "http://www.orlandosleep.com/make-an-appointment.htm",
+  "booking_tel": "(407) 303-1558",
+  "booking_fax": "",
+  "booking_other": "",
+  "before_first": "You may be asked to fill out a sleep diary like the one shown.",
+  "between_appointments": "",
+  "outcomes": [
+    "diagnose",
+    "treat",
+    "refer"
+  ],
+  "outcome_other": "",
+  "procedure_type": "researched",
+  "referral_types": [
+    "secondary"
+  ],
+  "specialist_type": "physician",
+  "url": "http://www.orlandosleep.com/"
+}

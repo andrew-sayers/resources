@@ -1,0 +1,72 @@
+{
+  "name": "Raleigh Neurology Associates",
+  "admin_contact": "",
+  "description": "[Raleigh Neurology Associates](https://www.raleighneurology.com/about-us/who-we-are/) provide a [Sleep Medicine Program](https://www.raleighneurology.com/specialties-services/sleep-medicine/) among many other services.",
+  "forms": [
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Raleigh Neurology Associates.jpg",
+          "title": "Raleigh Neurology Associates",
+          "url": "/resources/forms/Raleigh Neurology Associates/Raleigh_Neurology_Sleep_Chart_blank.pdf"
+        }
+      ],
+      "inbed_marker": "&darr;",
+      "layout": "calendar",
+      "outofbed_marker": "&uarr;",
+      "page_duration": "2 months",
+      "sharing_status": "shared with consent",
+      "sleep_marker": "▬",
+      "start_page": 1,
+      "start_time": "6pm",
+      "thumb": "/resources/thumbs/Raleigh Neurology Associates.jpg",
+      "total_pages": 1,
+      "url": "/resources/forms/Raleigh Neurology Associates/Raleigh_Neurology_Sleep_Chart_blank.pdf"
+    }
+  ],
+  "last_updated": "2022-03-21",
+  "locations": [
+    {
+      "address": "1520 & 1540 Sunday Drive,\nRaleigh,\nNC 27607",
+      "gps": [
+        "35.80053098712522",
+        "-78.73183784706966"
+      ],
+      "name": "Main office",
+      "url": "https://www.raleighneurology.com/about-us/locations-directions/#locationwrap"
+    },
+    {
+      "address": "4111 Ben Franklin Blvd.,\nDurham,\nNC 27704",
+      "gps": [
+        "36.04620121418172",
+        "-78.89819192723982"
+      ],
+      "name": "Durham office",
+      "url": "https://www.raleighneurology.com/about-us/locations-directions/#durham"
+    }
+  ],
+  "registration_required": false,
+  "appointment_types": [
+    "in-person",
+    "by-email"
+  ],
+  "booking_required": true,
+  "booking_url": "https://www.raleighneurology.com/about-us/ways-to-contact-us/#makeappointment",
+  "booking_tel": "(919) 782-3456",
+  "booking_fax": "",
+  "booking_other": "To get access to their telehealth site, contact them by phone and ask for a telehealth account.\n\nWhen booking, you can ask to see your preferred doctor.  [Dr. Thomas Kirk, MD](https://www.raleighneurology.com/about-us/meet-our-physicians/thomas-kirk-md/) sees patients with any sleep concern, [Dr. Thomas Perkins, MD, PhD](https://www.raleighneurology.com/about-us/meet-our-physicians/thomas-perkins-md-phd/) specialises in circadian rhythm disorders, while [their other physicians](https://www.raleighneurology.com/about-us/meet-our-physicians/) have other specialisms.",
+  "before_first": "",
+  "between_appointments": "You may be asked to fill out a sleep diary like the one shown.",
+  "outcomes": [
+    "diagnose",
+    "treat",
+    "refer"
+  ],
+  "outcome_other": "",
+  "procedure_type": "confirmed",
+  "referral_types": [
+    "direct"
+  ],
+  "specialist_type": "physician",
+  "url": "https://www.raleighneurology.com/about-us/who-we-are/"
+}

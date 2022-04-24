@@ -1,0 +1,38 @@
+{
+  "name": "The Sleep Support Project",
+  "admin_contact": "",
+  "description": "[The Sleep Support Project](https://sleepsupportproject.org/about/) are qualified BACP Registered counsellors.  Their [downloadable sleep diary](https://sleepsupportproject.org/sleep-diary-2/) is only available to members.\n",
+  "last_updated": "2022-03-21",
+  "locations": [
+    {
+      "address": "Knowsley Place,\nKnowsley St,\nBury\nBL9 0SW",
+      "gps": [
+        "53.59028181972621",
+        "-2.2989824405785266"
+      ]
+    }
+  ],
+  "registration_required": false,
+  "appointment_types": [
+    "in-person"
+  ],
+  "booking_required": true,
+  "booking_url": "https://www.raleighneurology.com/about-us/ways-to-contact-us/#makeappointment",
+  "booking_tel": "",
+  "booking_fax": "",
+  "booking_other": "See also [their page about booking sessions](https://sleepsupportproject.org/support/book-sessions/)",
+  "before_first": "you may be asked to fill out a sleep diary like [the one on their site](https://sleepsupportproject.org/sleep-diary-2/).",
+  "between_appointments": "",
+  "outcomes": [
+    "diagnose",
+    "treat",
+    "refer"
+  ],
+  "outcome_other": "",
+  "procedure_type": "researched",
+  "referral_types": [
+    "direct"
+  ],
+  "specialist_type": "physician",
+  "url": "https://sleepsupportproject.org/"
+}

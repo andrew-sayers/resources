@@ -1,0 +1,76 @@
+{
+  "name": "Plees Tracker",
+  "business_model": "Free (open source)",
+  "description": "A simple sleep tracker for Android phones.\n",
+  "file_format": "/core/src/PleesTracker/",
+  "last_updated": "2022-04-01",
+  "platforms": [
+    "android"
+  ],
+  "procedure": "1. [download for Android](https://f-droid.org/en/packages/hu.vmiklos.plees_tracker/)\n   * only available on [F-Droid](https://f-droid.org/), an alternative to the Play Store\n",
+  "reports": [
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Length/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/Plees Tracker/Length/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Length/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/Plees Tracker/Length/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Length/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/Plees Tracker/Length/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Length/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/Plees Tracker/Length/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "layout": "graph",
+      "name": "Length",
+      "start_page": 1,
+      "thumb": "/resources/thumbs/Plees Tracker/Length/simple.jpg",
+      "url": "/resources/images/Plees Tracker/Length/simple.png"
+    },
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Start time/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/Plees Tracker/Start time/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Start time/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/Plees Tracker/Start time/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Start time/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/Plees Tracker/Start time/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Plees Tracker/Start time/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/Plees Tracker/Start time/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "layout": "graph",
+      "name": "Start time",
+      "start_page": 1,
+      "thumb": "/resources/thumbs/Plees Tracker/Start time/simple.jpg",
+      "url": "/resources/images/Plees Tracker/Start time/simple.png"
+    }
+  ],
+  "source_code": "https://github.com/vmiklos/plees-tracker",
+  "thumb": "/resources/thumbs/Plees Tracker.jpg",
+  "url": "https://vmiklos.hu/plees-tracker/"
+}

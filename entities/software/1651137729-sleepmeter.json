@@ -1,0 +1,51 @@
+{
+  "name": "Sleepmeter",
+  "business_model": "Ad-supported",
+  "description": "A closed source Android application for tracking sleep habits.\n",
+  "file_format": "/core/src/Sleepmeter/",
+  "last_updated": "2022-04-01",
+  "platforms": [
+    "android"
+  ],
+  "procedure": "1. [download the APK](https://m.apkpure.com/sleepmeter-free/com.squalllinesoftware.android.applications.sleepmeter.free)\n   * the app has to be installed manually, as it is no longer available on the Play Store\n",
+  "reports": [
+    {
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Sleepmeter/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/Sleepmeter/simple.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Sleepmeter/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/Sleepmeter/weekday_alarm.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Sleepmeter/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/Sleepmeter/dspd.png"
+        },
+        {
+          "thumb": "/resources/thumbs/Sleepmeter/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/Sleepmeter/non-24.png"
+        }
+      ],
+      "how_received": "shared with consent",
+      "inbed_marker": "(blue background)",
+      "layout": "calendar",
+      "name": "Daily Sleep Bar Graph",
+      "outofbed_marker": "(none)",
+      "page_duration": "variable",
+      "sleep_marker": "▮",
+      "start_page": 1,
+      "start_time": "midnight",
+      "thumb": "/resources/thumbs/Sleepmeter/simple.jpg",
+      "total_pages": 1,
+      "url": "/resources/images/Sleepmeter/simple.png"
+    }
+  ],
+  "thumb": "/resources/thumbs/Sleepmeter.jpg",
+  "url": "https://www.squalllinesoftware.com/?q=node/2"
+}

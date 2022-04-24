@@ -1,0 +1,89 @@
+{
+  "name": "The Sleep Diary Project",
+  "business_model": "Free (open source)",
+  "description": "The project this page belongs to.\n",
+  "last_updated": "2022-04-01",
+  "platforms": [
+    "website"
+  ],
+  "procedure": "* [examine your diary through the dashboard](/dashboard)\n* [read this documentation](/docs)\n* [use the software library](/core)\n",
+  "reports": [
+    {
+      "events": [
+        {
+          "key": "A",
+          "value": "each alcoholic drink"
+        },
+        {
+          "key": "C",
+          "value": "each caffeinated drink includes coffee, tea, chocolate, cola"
+        },
+        {
+          "key": "P",
+          "value": "every time you take a sleeping pill or medication to aid sleep"
+        },
+        {
+          "key": "M",
+          "value": "Meals"
+        },
+        {
+          "key": "S",
+          "value": "Snacks"
+        },
+        {
+          "key": "X",
+          "value": "Exercise"
+        },
+        {
+          "key": "T",
+          "value": "use of toilet during sleep-time"
+        },
+        {
+          "key": "N",
+          "value": "noise that disturbs your sleep"
+        },
+        {
+          "key": "W",
+          "value": "time of wake-up alarm (if any)"
+        }
+      ],
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/The Sleep Diary Project/Report for doctors/simple.jpg",
+          "title": "Simple",
+          "url": "/resources/images/The Sleep Diary Project/Report for doctors/simple.pdf"
+        },
+        {
+          "thumb": "/resources/thumbs/The Sleep Diary Project/Report for doctors/weekday_alarm.jpg",
+          "title": "Weekday alarm",
+          "url": "/resources/images/The Sleep Diary Project/Report for doctors/weekday_alarm.pdf"
+        },
+        {
+          "thumb": "/resources/thumbs/The Sleep Diary Project/Report for doctors/dspd.jpg",
+          "title": "DSPD",
+          "url": "/resources/images/The Sleep Diary Project/Report for doctors/dspd.pdf"
+        },
+        {
+          "thumb": "/resources/thumbs/The Sleep Diary Project/Report for doctors/non-24.jpg",
+          "title": "Non-24",
+          "url": "/resources/images/The Sleep Diary Project/Report for doctors/non-24.pdf"
+        }
+      ],
+      "how_received": "shared with consent",
+      "inbed_marker": "&darr;",
+      "layout": "calendar",
+      "name": "Report for doctors",
+      "outofbed_marker": "&uarr;",
+      "page_duration": "1 week",
+      "sleep_marker": "&#x7c;―&#x7c;",
+      "start_page": 1,
+      "start_time": "6pm",
+      "thumb": "/resources/thumbs/The Sleep Diary Project/Report for doctors/simple.jpg",
+      "total_pages": "variable",
+      "url": "https://sleepdiary.github.io/report/"
+    }
+  ],
+  "source_code": "https://github.com/sleepdiary/",
+  "thumb": "/resources/thumbs/The Sleep Diary Project.jpg",
+  "url": "https://sleepdiary.github.io/"
+}

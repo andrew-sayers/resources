@@ -1,0 +1,15 @@
+{
+  "specialist_type": {
+    "physician": "a medical doctor who treats sleep disorders",
+    "researcher": "an academic who studies sleep disorders"
+  },
+  "referral_type": {
+    "direct": "a specialist who accepts referrals directly from members of the public",
+    "secondary": "a specialist who accepts referrals from any doctor (e.g. a general practitioner or primary care physician)",
+    "tertiary": "a specialist who accepts referrals from other sleep specialists"
+  },
+  "procedure_type": {
+    "researched": "the \"procedure\" data has been researched by us (e.g. by reading the website)",
+    "confirmed": "the \"procedure\" data has been confirmed by someone with direct experience (e.g. a doctor or patient)"
+  }
+}

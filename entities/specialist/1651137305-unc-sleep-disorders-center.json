@@ -1,0 +1,44 @@
+{
+  "name": "UNC Sleep Disorders Center",
+  "admin_contact": "",
+  "description": "[UNC Health](https://www.unchealthcare.org/) is a not-for-profit integrated health care system owned by the state of North Carolina.  [The Sleep Disorders Center](https://www.uncmedicalcenter.org/uncmc/care-treatment/neurology/sleep-disorders/) provides care to patients who have a wide range of sleep-related disorders.\n",
+  "last_updated": "2022-03-23",
+  "locations": [
+    {
+      "address": "300 Meadowmont Village Circle,\nSuite 202,\nChapel Hill,\nNC 27517",
+      "gps": [
+        "35.904673699064354",
+        "-79.01186058561848"
+      ],
+      "name": "Neurology Clinic",
+      "url": "https://www.uncmedicalcenter.org/uncmc/hospitals-locations/profile/unc-hospitals-neurology-clinic/"
+    }
+  ],
+  "registration_required": true,
+  "registration_tel": "",
+  "registration_fax": "",
+  "registration_other": "A physician will refer you to [one of their doctors](https://www.med.unc.edu/neurology/divisions/sleep-1/sleep-team/).  You may be able to ask about [their e-consult service](https://www.med.unc.edu/neurology/new-patient-referrals-1/adult-referrals/adult-neurology-e-consults/) at this point.",
+  "appointment_types": [
+    "in-person",
+    "by-email"
+  ],
+  "booking_required": true,
+  "booking_url": "",
+  "booking_tel": "",
+  "booking_fax": "",
+  "booking_other": "They will call you (usually within about 14-21 days), and will schedule an appointment if necessary.",
+  "before_first": "",
+  "between_appointments": "",
+  "outcomes": [
+    "diagnose",
+    "treat"
+  ],
+  "outcome_other": "",
+  "registration_url": "",
+  "procedure_type": "confirmed",
+  "referral_types": [
+    "secondary"
+  ],
+  "specialist_type": "physician",
+  "url": "https://www.med.unc.edu/neurology/divisions/sleep-1/"
+}
