@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""
+        />
+        <script
+          src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+          crossorigin=""
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <style type="text/css">
+         .left-line {
+             border-left: 1px solid rgba(0,0,0,.12);margin-left:12px;padding-left:18px
+         }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <v-app>
+                <v-main>
+
+                    <div
+                      style="position:absolute;max-width:600px;top:1em;left:50%;transform:translateX(-50%)"
+                      ><v-card>
+
+                        <v-stepper
+                          v-model="current_step"
+                          vertical
+                          non-linear
+                        >
+                            <v-stepper-step
+                              editable
+                              :complete="!step_1_incomplete"
+                              step="1"
+                            >
+                                General information
+                                <small>Thanks for taking the time!</small>
+                            </v-stepper-step>
+
+                            <v-stepper-content step="1">
+                                <div class="pl-2 pr-4">
+                                    <v-alert
+                                      border="left"
+                                      type="warning"
+                                      icon="mdi-github"
+                                    >
+                                        You'll need <a href="https://github.com/signup">a GitHub account</a> to submit this form
+                                    </v-alert>
+
+                                    <p>
+
+                                        About the organisation
+
+                                        <div class="left-line">
+
+                                            <v-text-field
+                                              v-model="entry.name"
+                                              required
+                                            >
+                                                <template #label>
+                                                    Name <strong class="red--text">*</strong>
+                                                </template>
+                                            </v-text-field>
+                                            <v-text-field
+                                              v-model="entry.description"
+                                              label="One-line descripton"
+                                              hint="e.g. &ldquo;treats circadian rhythm disorders in north-west Freedonia&rdquo;"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.website"
+                                              label="Front page"
+                                              hint="e.g. &ldquo;https://www.example.com&rdquo;"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.admin_contact"
+                                              label="Administrative contact"
+                                              hint="How would we contact the organisation about changes to the site?"
+                                            ></v-text-field>
+
+                                        </div>
+
+                                    </p>
+
+                                    <p>
+
+                                        I am... <strong class="red--text">*</strong>
+
+                                        <v-radio-group
+                                          v-model="relationship"
+                                          class="left-line mt-0 mb-0"
+                                          hide-details
+                                        >
+                                            <v-radio
+                                              label="... a member of this organisation"
+                                              value="member"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="... someone who has used this organisation"
+                                              value="user"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="... aware of this organisation in some other way"
+                                              value="other"
+                                            ></v-radio>
+                                        </v-radio-group>
+
+                                    </p>
+
+                                    <p>
+
+                                        The organisation has... <strong class="red--text">*</strong>
+
+                                        <v-radio-group
+                                          v-model="involvement"
+                                          class="left-line mt-0 mb-0"
+                                          hide-details
+                                        >
+                                            <v-radio
+                                              label="... already consented to publish this information"
+                                              value="consented"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="... expressed interest in exploring publication"
+                                              value="expressed-interest"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="... not yet been informed about this process"
+                                              value="not-informed"
+                                            ></v-radio>
+                                        </v-radio-group>
+
+                                    </p>
+
+                                    <p>
+
+                                        The organisation's goals are... <strong class="red--text">*</strong>
+
+                                        <v-radio-group
+                                          v-model="entry.specialist_type"
+                                          class="left-line mt-0 mb-0"
+                                          hide-details
+                                        >
+                                            <v-radio
+                                              label="... medical (providing diagnosis and treatment)"
+                                              value="physician"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="... academic (conducting research)"
+                                              value="researcher"
+                                            ></v-radio>
+                                        </v-radio-group>
+
+                                    </p>
+
+                                    <div class="mb-4">
+
+                                        This organisation accepts referrals... <strong class="red--text">*</strong>
+
+                                        <div class="left-line">
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.referral_types"
+                                              value="direct"
+                                              label="... directly from members of the public"
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.referral_types"
+                                              value="secondary"
+                                              label="... from any doctor"
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.referral_types"
+                                              value="tertiary"
+                                              label="... from other sleep specialists"
+                                            ></v-checkbox>
+                                        </div>
+
+                                    </div>
+
+                                    <v-btn
+                                      color="primary"
+                                      @click="current_step = 2"
+                                      :disabled="step_1_incomplete"
+                                    >
+                                        Continue
+                                    </v-btn>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_2_incomplete"
+                              editable
+                              step="2"
+                            >
+                                Physical locations
+                                <small>Office address(es)</small>
+                            </v-stepper-step>
+
+                            <v-stepper-content step="2">
+                                <div class="pl-2 pr-4">
+
+                                    <v-expansion-panels
+                                      v-model="location_panels"
+                                      style="max-width: calc(100% - 24px); margin: 12px 0 0 12px"
+                                      multiple
+                                    >
+                                        <v-expansion-panel
+                                          v-for="(location,n) in locations"
+                                          :key="location.id"
+                                          :style="location.deleted?'opacity:0.5':''"
+                                        >
+
+                                            <v-expansion-panel-header>{{location.name || 'location #' + (n+1) }}</v-expansion-panel-header>
+
+                                            <v-expansion-panel-content>
+
+                                                <div
+                                                  v-if="locations.length>1"
+
+                                                  style="text-align:right">
+                                                    <v-icon
+                                                      :disabled="n==0"
+                                                      @click="item_up(locations,n)"
+                                                      style="margin:0 2px"
+                                                    >
+                                                        mdi-arrow-up
+                                                    </v-icon>
+                                                    <v-icon
+                                                      :disabled="n==locations.length-1"
+                                                      @click="item_down(locations,n)"
+                                                      style="margin:0 2px"
+                                                    >
+                                                        mdi-arrow-down
+                                                    </v-icon>
+                                                    <v-icon
+                                                      @click="item_delete_toggle(location)"
+                                                      v-html="'mdi-delete'+(location.deleted?'-off':'')"
+                                                      style="margin:0 2px"
+                                                    ></v-icon>
+                                                </div>
+
+                                                <v-text-field
+                                                  v-model="location.name"
+                                                  label="Name of the location"
+                                                  hint="e.g. &ldquo;Main office&rdquo;"
+                                                ></v-text-field>
+
+                                                <v-text-field
+                                                  v-model="location.url"
+                                                  label="Website"
+                                                  hint="e.g. &ldquo;https://www.example.com/locations#main-office&rdquo;"
+                                                ></v-text-field>
+
+                                                <v-text-field
+                                                  v-model="location.tel"
+                                                  label="Phone number"
+                                                ></v-text-field>
+
+                                                <v-text-field
+                                                  v-model="location.fax"
+                                                  label="Fax number"
+                                                ></v-text-field>
+
+                                                <v-textarea
+                                                  v-model="location.address"
+                                                  hide-details
+                                                >
+                                                    <template #label>
+                                                        Street address <strong class="red--text">*</strong>
+                                                    </template>
+                                                </v-textarea>
+
+                                                <v-text-field
+                                                  v-model="location.gps"
+                                                  hide-details
+                                                >
+                                                    <template #label>
+                                                        GPS co-ordinates <strong class="red--text">*</strong>
+                                                    </template>
+                                                </v-text-field>
+
+                                                <v-btn
+                                                  color="primary"
+                                                  :disabled="!location.address"
+                                                  :loading="location_loading"
+                                                  @click="load_location(location)"
+                                                  style="width:100%"
+                                                  class="mt-1 mb-3"
+                                                >
+                                                    Find co-ordinates from address
+                                                </v-btn>
+
+                                                <p>
+
+                                                    <v-checkbox
+                                                      class="mt-0 mb-0"
+                                                      hide-details
+                                                      v-model="location.default_referrals"
+                                                      label="this location accepts the referral types specified above"
+                                                    ></v-checkbox>
+
+                                                </p>
+
+                                                <v-expand-transition>
+                                                    <div class="mb-4" v-show="!location.default_referrals">
+
+                                                        This location accepts referrals...
+
+                                                        <div class="left-line">
+                                                            <v-checkbox
+                                                              class="mt-0 mb-0"
+                                                              hide-details
+                                                              v-model="location.referral_types"
+                                                              value="direct"
+                                                              label="... directly from members of the public"
+                                                            ></v-checkbox>
+                                                            <v-checkbox
+                                                              class="mt-0 mb-0"
+                                                              hide-details
+                                                              v-model="location.referral_types"
+                                                              value="secondary"
+                                                              label="... from any doctor"
+                                                            ></v-checkbox>
+                                                            <v-checkbox
+                                                              class="mt-0 mb-0"
+                                                              hide-details
+                                                              v-model="location.referral_types"
+                                                              value="tertiary"
+                                                              label="... from other sleep specialists"
+                                                            ></v-checkbox>
+                                                        </div>
+
+                                                    </div>
+                                                </v-expand-transition>
+
+                                            </v-expansion-panel-content>
+                                        </v-expansion-panel>
+                                    </v-expansion-panels>
+
+                                    <v-dialog
+                                      v-model="location_dialog"
+                                      max-width="500"
+                                    >
+                                        <v-card>
+                                            <v-card-title class="text-h5 grey lighten-2">
+                                                Choose a location
+                                            </v-card-title>
+
+                                            <v-card-text>
+                                                <div class="ma-4" v-if="location_not_found">
+                                                    Could not find any addresses.<br/>
+                                                    Please try a different search.
+                                                </div>
+                                                <div v-else id="map" class="mt-3 mb-3" style="height:250px"></div>
+                                            </v-card-text>
+
+                                            <v-divider></v-divider>
+
+                                            <v-card-actions>
+                                                <v-spacer></v-spacer>
+                                                <v-btn
+                                                  color="primary"
+                                                  text
+                                                  @click="location_not_found||map.remove(); location_dialog = false"
+                                                >
+                                                    cancel
+                                                </v-btn>
+                                            </v-card-actions>
+                                        </v-card>
+                                    </v-dialog>
+
+                                    <div>
+                                        <v-btn
+                                          color="primary"
+                                          class="ma-3"
+                                          @click="add_location"
+                                          style="left: calc( 100% - 24px );transform:translateX(-100%)"
+                                        >
+                                            <v-icon>mdi-plus</v-icon> Add location
+                                        </v-btn>
+                                    </div>
+
+                                    <v-btn
+                                      color="primary"
+                                      @click="current_step = 3"
+                                      :disabled="step_2_incomplete"
+                                    >
+                                        Continue
+                                    </v-btn>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_3_incomplete"
+                              editable
+                              step="3"
+                            >
+                                Forms and reports
+                                <small>Common paperwork</small>
+                            </v-stepper-step>
+
+                            <v-stepper-content step="3">
+                                <div class="pl-2 pr-4">
+
+                                <v-expansion-panels
+                                  v-model="doc_panels"
+                                  style="max-width: calc(100% - 24px); margin: 12px 0 0 12px"
+                                  multiple
+                                >
+                                    <v-expansion-panel
+                                      v-for="(doc,n) in docs"
+                                      :key="doc.id"
+                                      :style="doc.deleted?'opacity:0.5':''"
+                                    >
+
+                                        <v-expansion-panel-header>{{doc.name || 'document #' + (n+1) }}</v-expansion-panel-header>
+
+                                        <v-expansion-panel-content>
+
+                                            <div style="text-align:right">
+                                                <v-icon
+                                                  :disabled="n==0"
+                                                  @click="item_up(docs,n)"
+                                                  style="margin:0 2px"
+                                                >
+                                                    mdi-arrow-up
+                                                </v-icon>
+                                                <v-icon
+                                                  :disabled="n==docs.length-1"
+                                                  @click="item_down(docs,n)"
+                                                  style="margin:0 2px"
+                                                >
+                                                    mdi-arrow-down
+                                                </v-icon>
+                                                <v-icon
+                                                  @click="item_delete_toggle(doc)"
+                                                  v-html="'mdi-delete'+(doc.deleted?'-off':'')"
+                                                  style="margin:0 2px"
+                                                ></v-icon>
+                                            </div>
+
+                                            <v-text-field
+                                              v-model="doc.name"
+                                              label="Name of the document"
+                                              hint="e.g. &ldquo;Sleep diary&rdquo;"
+                                            ></v-text-field>
+
+
+                                            <p>
+
+                                                This document is... <strong class="red--text">*</strong>
+
+                                                <v-radio-group
+                                                  v-model="doc.doc_type"
+                                                  class="left-line mt-0 mb-0"
+                                                  hide-details
+                                                >
+                                                    <v-radio
+                                                      label="... a form (to fill in with observations)"
+                                                      value="form"
+                                                    ></v-radio>
+                                                    <v-radio
+                                                      label="... a report (gives answers based on observations)"
+                                                      value="report"
+                                                    ></v-radio>
+                                                </v-radio-group>
+
+                                            </p>
+
+                                            <div class="mb-4">
+
+                                                I can provide... <strong class="red--text">*</strong>
+
+                                                <v-radio-group
+                                                  v-model="doc.shared"
+                                                  class="left-line mt-0 mb-0"
+                                                  hide-details
+                                                >
+                                                    <v-radio
+                                                      value="found online"
+                                                      label="instructions to find this on the organisation's website (recommended)"
+                                                    ></v-radio>
+                                                    <v-radio
+                                                      value="shared with consent"
+                                                      label="a blank example the organisation has consented to put online"
+                                                    ></v-radio>
+                                                    <v-radio
+                                                      value="private"
+                                                      label="a document containing my personal information, or which the organisation has not yet made public"
+                                                    ></v-radio>
+                                                </v-radio-group>
+
+                                                <v-expand-transition>
+                                                    <div v-show="doc.shared=='found online'">
+
+                                                        <v-text-field
+                                                          v-model="doc.url"
+                                                          hint="e.g. &ldquo;https://www.example.com/sleep-diary.pdf&rdquo;"
+                                                        >
+                                                            <template #label>
+                                                                Direct link <strong class="red--text">*</strong>
+                                                            </template>
+                                                        </v-text-field>
+
+                                                        <v-textarea
+                                                          v-model="doc.instructions_to_find"
+                                                          placeholder="1. Go to https://www.example.com
+2. click on 'patient forms' in the menu at the top
+3. click the 'sleep diary' option in the menu"
+                                                        >
+                                                            <template #label>
+                                                                How to find the document <strong class="red--text">*</strong>
+                                                            </template>
+                                                        </v-textarea>
+
+                                                        <v-expand-transition>
+                                                            <v-alert
+                                                              v-show="doc.instructions_to_find.search(/^\s*https?:\/+[^\/]+\/\S+\.\S+\s*$/)==0"
+                                                              border="left"
+                                                              type="warning"
+                                                            >
+                                                                Please provide instructions to find the document organically, not just a link.<br/>
+                                                                That way we can update the documentation when new documents come out.
+                                                            </v-alert>
+                                                        </v-expand-transition>
+
+                                                    </div>
+                                                </v-expand-transition>
+
+                                                <v-expand-transition>
+                                                    <v-alert
+                                                      v-show="doc.shared=='shared with consent'"
+                                                      border="left"
+                                                      type="success"
+                                                    >
+                                                        You can upload documents on the next page.<br/>
+                                                        Make sure all reports use <a href="/sleepdiary/resources/blob/main/common_sleep_diaries/">our computer-generated datasets</a>
+                                                    </v-alert>
+                                                </v-expand-transition>
+
+                                                <v-expand-transition>
+                                                    <v-alert
+                                                      v-show="doc.shared=='private'"
+                                                      border="left"
+                                                      type="warning"
+                                                    >
+                                                        Documents with private or personal information can't be used publicly.<br/>
+                                                        You'll need to get blank forms, or reports with <a href="/sleepdiary/resources/blob/main/common_sleep_diaries/">our computer-generated datasets</a>
+                                                    </v-alert>
+                                                </v-expand-transition>
+
+                                            </div>
+
+                                        </v-expansion-panel-content>
+
+                                    </v-expansion-panel>
+
+                                </v-expansion-panels>
+
+                                    <div>
+                                        <v-btn
+                                          color="primary"
+                                          class="ma-3"
+                                          @click="add_doc"
+                                          style="left: calc( 100% - 24px );transform:translateX(-100%)"
+                                        >
+                                            <v-icon>mdi-plus</v-icon> Add document
+                                        </v-btn>
+                                    </div>
+
+                                    <v-card-actions>
+                                        <v-btn
+                                          color="primary"
+                                          @click="current_step = 4"
+                                          :disabled="step_3_incomplete"
+                                        >
+                                            Continue
+                                        </v-btn>
+                                    </v-card-actions>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_4_incomplete"
+                              step="4"
+                              editable
+                            >
+
+                                <template v-if="entry.specialist_type=='physician'">Patient's journey</template>
+                                <template v-else-if="entry.specialist_type=='researcher'">Participant's journey</template>
+                                <template v-else>Individual's journey</template>
+                                <small>What will my experience be?</small>
+                            </v-stepper-step>
+                            <v-stepper-content step="4">
+                                <div class="pl-2 pr-4">
+
+                                    <v-checkbox
+                                      hide-details
+                                      v-model="entry.registration_required"
+                                      label="I need to register before booking an appointment"
+                                    ></v-checkbox>
+
+                                    <v-expand-transition>
+                                        <div
+                                          class="mb-4 left-line"
+                                          v-show="!!entry.registration_required"
+                                        >
+                                            <v-text-field
+                                              v-model="entry.registration_url"
+                                              label="Online registration form"
+                                              hint="e.g. &ldquo;https://www.example.com/register&rdquo;"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.registration_tel"
+                                              label="Registration phone number"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.registration_fax"
+                                              label="Registration fax number"
+                                            ></v-text-field>
+                                            <v-textarea
+                                              v-model="entry.registration_other"
+                                              label="Other registration method"
+                                            ></v-textarea>
+                                        </div>
+                                    </v-expand-transition>
+
+                                    <div class="mb-4">
+                                        <v-checkbox
+                                          hide-details
+                                          v-model="entry.appointment_required"
+                                          label="I need to book appointments"
+                                        ></v-checkbox>
+
+                                        <v-expand-transition>
+                                            <div
+                                              class="mb-4 left-line"
+                                              v-show="entry.appointment_required"
+                                                >
+                                                <v-text-field
+                                                  v-model="entry.appointment_url"
+                                                  label="Online appointment form"
+                                                  hint="e.g. &ldquo;https://www.example.com/register&rdquo;"
+                                                ></v-text-field>
+                                                <v-text-field
+                                                  v-model="entry.appointment_tel"
+                                                  label="Appointment phone number"
+                                                ></v-text-field>
+                                                <v-text-field
+                                                  v-model="entry.appointment_fax"
+                                                  label="Appointment fax number"
+                                                ></v-text-field>
+                                                <v-textarea
+                                                  v-model="entry.appointment_other"
+                                                  label="Other registration method"
+                                                ></v-textarea>
+                                            </div>
+                                        </v-expand-transition>
+                                    </div>
+
+                                    <div class="mb-4">
+
+                                        An appointment means...
+
+                                        <div class="left-line">
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.appointment_types"
+                                              value="in-person"
+                                              label="... going to a location above at an agreed time"
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.appointment_types"
+                                              value="by-phone"
+                                              label="... talking on the phone at an agreed time"
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.appointment_types"
+                                              value="by-voip"
+                                              label="... talking online in real-time (e.g. Skype or Zoom)"
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.appointment_types"
+                                              value="by-email"
+                                              label="... exchanging messages online (e.g. e-mail or a web portal)"
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.appointment_types"
+                                              value="other"
+                                              label="... using some other procedure (discussed below)"
+                                            ></v-checkbox>
+
+                                            <v-expand-transition>
+                                                <v-textarea
+                                                  v-model="entry.appointment_type_other"
+                                                  v-show="entry.appointment_types.includes('other')"
+                                                  label="Other ways to conduct an appointment"
+                                                    hide-details
+                                                    ></v-textarea>
+                                            </v-expand-transition>
+                                        </div>
+
+                                    </div>
+
+                                    <v-textarea
+                                      class="mb-4"
+                                      v-model="entry.before_first"
+                                      label="Before my first appointment, I need to..."
+                                      placeholder="e.g. what forms should I fill out?"
+                                      hide-details
+                                    ></v-textarea>
+
+                                    <v-textarea
+                                      class="mb-4"
+                                      v-model="entry.between_appointments"
+                                      label="Between appointments, I need to..."
+                                      placeholder="e.g. fill out more forms"
+                                      hide-details
+                                    ></v-textarea>
+
+                                    <div class="mb-4">
+
+                                        The specialist...
+
+                                        <div class="left-line">
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.outcomes"
+                                              value="diagnose"
+                                              label="... will aim to diagnose my condition"
+                                              v-if="entry.specialist_type=='physician'"
+                                            >
+                                            </v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.outcomes"
+                                              value="treat"
+                                              label="... will aim to offer treatment"
+                                              v-if="entry.specialist_type=='physician'"
+                                            >
+                                            </v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.outcomes"
+                                              value="refer"
+                                              label="... may refer me to a specialist for a rare condition"
+                                              v-if="entry.specialist_type=='physician'"
+                                            >
+                                            </v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.outcomes"
+                                              value="explain"
+                                              label="... will explain relevant research outcomes when possible"
+                                              v-if="entry.specialist_type=='researcher'"
+                                            >
+                                            </v-checkbox>
+                                            <v-checkbox
+                                              class="mt-0 mb-0"
+                                              hide-details
+                                              v-model="entry.outcomes"
+                                              value="other"
+                                              label="... will produce some other outcome (discussed below)"
+                                            >
+                                            </v-checkbox>
+
+                                            <v-expand-transition>
+                                                <v-textarea
+                                                  v-model="entry.outcome_other"
+                                                  v-show="entry.outcomes.includes('other')"
+                                                  label="Other possible outcome(s)"
+                                                  hide-details
+                                                ></v-textarea>
+                                            </v-expand-transition>
+                                        </div>
+
+                                    </div>
+
+                                    <v-btn
+                                      color="primary"
+                                      @click="current_step = 5"
+                                      :disabled="step_4_incomplete"
+                                    >
+                                        Continue
+                                    </v-btn>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_5_incomplete"
+                              step="5"
+                              editable
+                            >
+                                Review and submit
+                                <small>Create GitHub issue</small>
+                            </v-stepper-step>
+                            <v-stepper-content step="5">
+                                <div class="pl-2 pr-4">
+
+                                    <p>Click <em>create new issue</em> to create a GitHub issue with the following text:</p>
+
+                                    <div class="left-line">
+                                        <div style="white-space: pre-wrap">{{preamble}}
+```</div>
+                                        <code style="white-space: pre-wrap">{{json}}</code>
+                                        <div>```</div>
+                                    </div>
+
+                                    <v-card-actions>
+                                        <v-btn
+                                          color="primary"
+                                          :disabled="step_5_incomplete"
+                                          :href="submit_url"
+                                        >
+                                            Create new issue
+                                        </v-btn>
+                                    </v-card-actions>
+                                </div>
+                            </v-stepper-content>
+
+                        </v-stepper>
+                    </v-card>
+
+                    <v-btn
+                      class="mt-2"
+                      style="width:100%"
+                      @click="license_dialog = true"
+                    >
+                        <v-icon>mdi-copyright</v-icon> Page released under a CC0 license
+                    </v-btn>
+                    <v-dialog
+                      v-model="license_dialog"
+                      max-width="500"
+                    >
+                        <v-card>
+                            <v-card-title class="text-h5 grey lighten-2">
+                                Released under a CC0 license
+                            </v-card-title>
+
+                            <v-card-text class="pa-3">
+                                <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+                                    <a rel="license"
+                                       href="http://creativecommons.org/publicdomain/zero/1.0/">
+                                        <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+                                    </a>
+                                    <br />
+                                    To the extent possible under law,
+                                    <a rel="dct:publisher"
+                                       href="https://sleepdiary.github.io/resources/">
+                                        <span property="dct:title">Sleep Diary Authors</span></a>
+                                    has waived all copyright and related or neighboring rights to
+                                    <span property="dct:title">Sleep Diary Resources</span>.
+                                    This work is published from:
+                                    <span property="vcard:Country" datatype="dct:ISO3166"
+                                          content="GB" about="https://sleepdiary.github.io/resources/">
+                                        United Kingdom</span>.
+                                </p>
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <v-card-actions>
+                                <v-btn
+                                  color="primary"
+                                  text
+                                  href="https://github.com/sleepdiary/resources"
+                                >
+                                    source code
+                                </v-btn>
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                  color="primary"
+                                  text
+                                  @click="license_dialog = false"
+                                >
+                                    close
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+
+                    </div>
+
+                </v-main>
+            </v-app>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+        <script>
+        "use strict";
+        new Vue({
+          el: '#app',
+          vuetify: new Vuetify(),
+          data: () => ({
+            current_step: (
+              sessionStorage.getItem('current_step')
+              ? parseInt(sessionStorage.getItem('current_step'))
+              : 1
+            ),
+
+            entry: (
+              sessionStorage.getItem('entry')
+              ? JSON.parse(sessionStorage.getItem('entry'))
+              : {
+                // step 1:
+                name: '',
+                description: '',
+                website: '',
+                admin_contact: '',
+                specialist_type: undefined,
+                referral_types: [],
+
+                // step 4:
+                registration_required: false,
+                registration_tel: '',
+                registration_fax: '',
+                registration_other: '',
+                appointment_types: [],
+                appointment_type_other: '',
+                appointment_required: true,
+                appointment_url: '',
+                appointment_tel: '',
+                appointment_fax: '',
+                appointment_other: '',
+
+                before_first: '',
+                between_appointments: '',
+
+                outcomes: [],
+                outcome_other: '',
+              }
+            ),
+
+            // step 1:
+            involvement: sessionStorage.getItem('involvement'),
+            relationship: sessionStorage.getItem('relationship'),
+
+            // step 2:
+            locations: (
+              sessionStorage.getItem('locations')
+              ? JSON.parse(sessionStorage.getItem('locations'))
+              : [{id:'',name:'',default_referrals:true,referrals:[],deleted:false,address:'',gps:'',referral_types:[]}]
+            ),
+            location_panels: [ 0 ],
+            location_loading: false,
+            location_dialog: false,
+            location_not_found: false,
+            map: { remove() {} },
+
+            // step 3:
+            docs: (
+              sessionStorage.getItem('docs')
+              ? JSON.parse(sessionStorage.getItem('docs'))
+              : []
+            ),
+            doc_panels: [],
+
+            // license:
+            license_dialog: false,
+
+          }),
+          methods: {
+            add_location() {
+              this.locations.push({id:new Date().getTime(),name:'',default_referrals:true,referrals:[],deleted:false,address:'',gps:'',referral_types:[]});
+              this.location_panels.push(this.locations.length-1);
+            },
+            add_doc() {
+              this.docs.push({id:new Date().getTime(),shared:undefined,deleted:false,instructions_to_find:''});
+              this.doc_panels.push(this.docs.length-1);
+            },
+            item_up( list, n ) {
+              const item = list[n];
+              list.splice( n  , 1 );
+              list.splice( n-1, 0, item );
+            },
+            item_down( list, n ) {
+              const item = list[n];
+              list.splice( n  , 1 );
+              list.splice( n+1, 0, item );
+            },
+            item_delete_toggle( elem ) {
+              elem.deleted ^= true;
+            },
+            load_location(location) {
+              this.location_loading = true;
+              fetch(
+                'https://nominatim.openstreetmap.org/search?format=json&q='+encodeURIComponent(location.address)
+              )
+                .then( response => {
+                  this.location_loading = false;
+                  this.location_not_found = false;
+                  if (response.ok) {
+                    this.location_dialog = true;
+                    response.json().then( data => {
+                      if ( data.length ) {
+                        const bounds = [];
+                        this.map = L.map('map');
+                        data.forEach( d => {
+                          bounds.push([ parseFloat(d.boundingbox[0]), parseFloat(d.boundingbox[2]) ]);
+                          bounds.push([ parseFloat(d.boundingbox[1]), parseFloat(d.boundingbox[3]) ]);
+                          const a = document.createElement('A');
+                          a.setAttribute( 'href', '#select-location');
+                          a.innerText = d.display_name;
+                          a.addEventListener('click',event => {
+                            location.gps = d.lat + ', ' + d.lon;
+                            this.location_dialog = false;
+                            this.map.remove();
+                            event.preventDefault();
+                          });
+                          L.marker([d.lat,d.lon])
+                           .bindPopup(a)
+                           .addTo(this.map);
+                        });
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(this.map.fitBounds(bounds));
+                      } else {
+                        this.location_not_found = true;
+                      }
+                    });
+                  }
+                });
+            },
+          },
+          watch: {
+            current_step() {
+                sessionStorage.setItem('current_step',this.current_step)
+            },
+            involvement() {
+                sessionStorage.setItem('involvement',this.involvement)
+            },
+            relationship() {
+                sessionStorage.setItem('relationship',this.relationship)
+            },
+            entry: {
+              handler() {
+                sessionStorage.setItem('entry',JSON.stringify(this.entry))
+              },
+              deep: true,
+            },
+            locations: {
+              handler() {
+                sessionStorage.setItem('locations',JSON.stringify(this.locations.filter( entry => !entry.deleted )))
+              },
+              deep: true,
+            },
+            docs: {
+              handler() {
+                sessionStorage.setItem('docs',JSON.stringify(this.docs.filter( entry => !entry.deleted )))
+              },
+              deep: true,
+            },
+          },
+          computed: {
+            step_1_incomplete() {
+              return (
+                !this.entry.name ||
+                !this.relationship ||
+                !this.involvement ||
+                !this.entry.specialist_type ||
+                !this.entry.referral_types.length
+              );
+            },
+            step_2_incomplete() {
+              return this.locations.some(
+                location => !location.address || !location.gps
+              );
+            },
+            step_3_incomplete() {
+              return this.docs.some(
+                doc => !doc.doc_type || !doc.shared || ( doc.shared == 'found online' && !doc.instructions_to_find )
+              );
+              return false;
+            },
+            step_4_incomplete() {
+              return !this.entry.outcomes.length || !this.entry.appointment_types.length;
+            },
+            step_5_incomplete() {
+              return (
+                this.step_1_incomplete ||
+                this.step_2_incomplete ||
+                this.step_3_incomplete ||
+                this.step_4_incomplete
+              );
+            },
+            preamble() {
+              let relationship = {
+                member: "am a member of",
+                user  : "have used",
+                other : "am aware of",
+              },
+                  involvement = {
+                    "consented": "The organisation has already consented to publish this information",
+                    "expressed-interest": "The organisation has expressed interest in exploring publication",
+                    "not-informed": "The organisation not yet been informed about this process",
+                  },
+                  shared_with_consent = this.docs.filter( doc => doc.shared == 'shared with consent' ).length,
+                  shared_private      = this.docs.filter( doc => doc.shared == 'private'             ).length,
+                  ret = `I would like to add an entry to \`specialists.json\` for an organisation I ${relationship[this.relationship]||"have not yet specified my relationship with"}.  ${involvement[this.involvement]||'I have not yet specified how the organisation is involved'}.\n\n`
+              ;
+              if ( shared_with_consent ) {
+                ret += "I have attached ";
+                if ( shared_with_consent == 1 ) {
+                  ret += "a document"
+                } else {
+                  ret += shared_with_consent + " documents";
+                }
+                ret += " the organisation has consented to make available online.\n(see beneath this text box for instructions about attaching documents)\n\n";
+              }
+              if ( shared_private ) {
+                ret += "I have access to ";
+                if ( shared_private == 1 ) {
+                  ret += "a document"
+                } else {
+                  ret += shared_private + " documents";
+                }
+                ret += " with private or personal information on it.  Let's talk about what we can do with it.\n\n";
+              }
+              return ret;
+            },
+            json() {
+              const relationships = {
+                member: 'confirmed',
+                user: 'confirmed',
+                other: 'researched'
+              },
+                    remove_deleted = items => (
+                      items
+                        .filter( entry => !entry.deleted )
+                        .map( item => {
+                          const ret = Object.assign({},item);
+                          delete ret.id;
+                          delete ret.deleted;
+                          delete doc.doc_type;
+                          return ret
+                        }
+                        )
+                    )
+              ;
+              return JSON.stringify(
+                Object.assign(
+                  {},
+                  this.entry,
+                  {
+                    procedure_type: relationships[this.relationship] || 'unspecified',
+                    locations: remove_deleted(this.locations),
+                    forms: remove_deleted( this.docs.filter( doc => doc.doc_type == 'form' ) ),
+                    reports: remove_deleted( this.docs.filter( doc => doc.doc_type == 'report' ) ),
+                  },
+                ),
+                null, '  '
+              );
+            },
+            submit_url() {
+              return 'https://github.com/andrew-sayers/resources/issues/new?title=New+specialist:+'+encodeURIComponent(this.entry.name)+'&body='+encodeURIComponent(this.preamble+"```\n"+this.json+"\n```");
+            },
+          },
+        });
+        </script>
+
+    </body>
+</html>
