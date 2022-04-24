@@ -1,0 +1,187 @@
+name: Create branches for new entries
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+      - uses: actions/github-script@v6
+        env:
+          GIT_AUTHOR_NAME: "Automatic updater [bot]"
+          GIT_AUTHOR_EMAIL: "sleepdiary-bot@pileofstuff.org"
+          GIT_COMMITTER_NAME: "Automatic updater [bot]"
+          GIT_COMMITTER_EMAIL: "sleepdiary-bot@pileofstuff.org"
+          AUTHOR: ${{ github.event.issue.user.login }}
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+        with:
+          script: |
+            const author = process.env.AUTHOR;
+            const title = process.env.TITLE;
+            const body  = process.env.BODY;
+            const issue_number = ${{ github.event.issue.number }};
+
+            const branch_name = 'issue-'+issue_number;
+
+            const fs = require('fs');
+            const child_process = require('child_process');
+
+            function zero_pad(n,len) {
+                n = n.toString();
+                while ( n.length < (len||2) ) n = '0'+n;
+                return n;
+            }
+
+            const multipliers = {
+                day: 1,
+                week: 7,
+                month: 30,
+            };
+            function to_duration(d) {
+                let ret=0;
+                if ( d == "variable" ) return 0;
+                d.replace(
+                    /^([0-9]+) (day|week|month)s?$/i,
+                    (_,base,multiplier) => ret = parseInt(base,10) * multipliers[multiplier.toLowerCase()]
+                );
+                if ( !ret ) {
+                    throw Error(`Could not convert '${d}' to duration`);
+                }
+                return zero_pad(ret,4);
+            }
+
+            function to_time(t) {
+                switch ( t.toLowerCase() ) {
+                case 'midnight': return "00";
+                case 'noon'    : return "12";
+                default:
+                    let ret;
+                    t.replace(
+                        /^([0-9]+) *([ap])m$/i,
+                        (_,n,ap) => ret = parseInt(n,10) + (ap=='a'?0:12)
+                    );
+                    if ( !ret ) {
+                        throw Error(`Could not convert ${t} to time`);
+                    }
+                    return zero_pad(ret,2);
+                }
+            }
+
+            const name_preamble = /^(?:mr|mrs|miss|ms|dr|the)\b/i;
+
+            title.replace(
+                /^New (specialist|software):/,
+                (_,entity_type) => body.replace(/```(.*)```/s, (_,text) => {
+                    const entry = JSON.parse(text);
+                    const filename = `entities/${entity_type}.json`;
+                    const entries = JSON.parse(fs.readFileSync(filename));
+                    let todo_list = '';
+
+                    entry.last_updated = new Date().toISOString().split("T")[0];
+
+                    [ 'forms', 'reports' ].forEach(
+                        fr => entry[fr].forEach( (doc,n) => {
+                            if ( doc.url ) {
+                                const url = doc.url;
+                                delete doc.url;
+                                doc.gallery = [
+                                    {
+                                        thumb: `/resources/thumbs/${doc.name||entry.name}.jpg`,
+                                        url: doc.url,
+                                    }
+                                ];
+                            } else {
+                                doc.gallery = "\uE000";
+                                todo_list += `- [ ] Create a gallery for ${fr}[${n}]\n`;
+                            }
+                            doc["\uE001"] = "(line used for internal processing)";
+                            todo_list += `- [ ] Fill in extra information for \`${fr}[${n}]\`\n`;
+                        })
+                    );
+
+                    todo_list += `- [ ] Remove TODO items
+            - [ ] Any last checks/process improvements
+            - [ ] Merge branch into main`
+
+                    entries.push("\uE003");
+                    entries.push(entry);
+
+                    let new_entry_text = JSON.stringify(entries,null,'  '), line_number = 1;
+                    // find the text we added:
+                    for ( let n=0; n!=new_entry_text.length; ++n ) {
+                        switch ( new_entry_text[n] ) {
+                        case "\n"    : ++line_number; break;
+                        case "\uE003": n = new_entry_text.length-1;
+                        }
+                    }
+                    new_entry_text = (
+                        new_entry_text
+                            .replace(
+                                /"\uE000"/g,
+                                `[
+            #          TODO: fill in the values below:
+            #          {
+            #            "url": "...",
+            #            "thumb": "..."
+            #          },
+                    ]`
+                            )
+                            .replace(
+                                /.*\uE001.*/g,
+                                `#        TODO: fill in the values below:
+            #        layout: calendar
+            #        page duration: # e.g. 14 days or 2 weeks
+            #        total pages: # e.g. 1 or variable
+            #        start time: # e.g. Noon or 6pm
+            #        in-bed marker: # e.g. "&darr;" or (none)
+            #        out-of-bed marker: # e.g. "&uarr;" or (none)
+            #        sleep marker: # e.g. ▬ or ▮
+            #        events:
+            #          -
+            #            key: # e.g. C
+            #            value: # e.g. coffee, cola, or tea
+            #          ...
+            #`
+                            )
+                            .replace(
+                                /.*\uE003.*/g,
+                                "# TODO: check and push this new entry:"
+                            )
+                            .replace( /\n*$/, "\n" )
+                    );
+
+                    fs.writeFileSync(filename,new_entry_text);
+
+                    const spawn = require("child_process").spawnSync;
+
+                    spawn('git', ['commit',filename,'-m','First draft for issue #' + issue_number + ' by @' + author]);
+
+                    spawn('git', ['push','origin','HEAD:'+branch_name]);
+
+                    let message = `Thanks for contributing!
+
+            Here's [an auto-generated first draft](https://github.com/${context.repo.owner}/${context.repo.repo}/tree/${branch_name}/${filename}#L${line_number}) based on your information.
+
+            If you'd like to edit this draft yourself, please [fork this repository](https://github.com/${context.repo.owner}/${context.repo.repo}/fork) and [edit \`${filename}\`](https://github.com/${context.repo.owner}/${context.repo.repo}/edit/${branch_name}/${filename}#L${line_number}).  Just let us know the repository we need to look at.
+
+            Otherwise, someone should come along in a day or two and finish off the last few jobs:
+
+            ` + todo_list;
+
+                    github.rest.issues.createComment({
+                        issue_number,
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        body: message
+                    });
+
+                })
+            );
+

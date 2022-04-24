@@ -1,0 +1,702 @@
+[
+  {
+    "description": "[The Center for Sleep & Wake Disorders](https://sleepdoc.com/) is an accredited full service sleep center.",
+    "forms": [
+      {
+        "display_name": "Center for Sleep & Wake Disorders: Adult sleep diary",
+        "events": [
+          {
+            "key": "A",
+            "value": "alcohol"
+          },
+          {
+            "key": "M",
+            "value": "medication"
+          },
+          {
+            "key": "C",
+            "value": "caffeine"
+          },
+          {
+            "key": "T",
+            "value": "TV"
+          }
+        ],
+        "find_this_by": "going to their [forms and resources page](https://sleepdoc.com/forms)",
+        "gallery": [
+          {
+            "display_name": "Adult sleep diary: Adult sleep diary",
+            "short_name": "Adult sleep diary",
+            "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adult.jpg",
+            "title": "Adult sleep diary",
+            "url": "https://sleepdoc.com/wp-content/uploads/2019/10/sleep_log.pdf"
+          }
+        ],
+        "inbed_marker": "○",
+        "layout": "calendar",
+        "name": "Adult sleep diary",
+        "outofbed_marker": "🌅",
+        "page_duration": {
+          "key": "0028",
+          "value": "28 days"
+        },
+        "sharing_status": "found online",
+        "short_name": "Adult sleep diary",
+        "sleep_marker": "●―● (asleep) <br/> N〰N (nap)",
+        "start_page": 1,
+        "start_time": {
+          "key": "18",
+          "value": "6pm"
+        },
+        "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adult.jpg",
+        "total_pages": 1,
+        "url": "https://sleepdoc.com/wp-content/uploads/2019/10/sleep_log.pdf"
+      },
+      {
+        "display_name": "Center for Sleep & Wake Disorders: Adolescent sleep diary",
+        "events": [
+          {
+            "key": "F",
+            "value": "food"
+          },
+          {
+            "key": "M",
+            "value": "medication"
+          },
+          {
+            "key": "C",
+            "value": "caffeine"
+          },
+          {
+            "key": "T",
+            "value": "TV"
+          }
+        ],
+        "find_this_by": "going to their [forms and resources page](https://sleepdoc.com/forms)",
+        "gallery": [
+          {
+            "display_name": "Adolescent sleep diary: Adolescent sleep diary",
+            "short_name": "Adolescent sleep diary",
+            "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adolescent.jpg",
+            "title": "Adolescent sleep diary",
+            "url": "https://sleepdoc.com/wp-content/uploads/2019/10/Sleep-log-adolescent.pdf"
+          }
+        ],
+        "inbed_marker": "○",
+        "layout": "calendar",
+        "name": "Adolescent sleep diary",
+        "outofbed_marker": "🌅",
+        "page_duration": {
+          "key": "0028",
+          "value": "28 days"
+        },
+        "sharing_status": "found online",
+        "short_name": "Adolescent sleep diary",
+        "sleep_marker": "●―● (asleep) <br/> N〰N (nap)",
+        "start_page": 1,
+        "start_time": {
+          "key": "18",
+          "value": "6pm"
+        },
+        "thumb": "/resources/thumbs/Center for Sleep and Wake Disorders-adolescent.jpg",
+        "total_pages": 1,
+        "url": "https://sleepdoc.com/wp-content/uploads/2019/10/Sleep-log-adolescent.pdf"
+      }
+    ],
+    "last_updated": {
+      "key": "001647820800000",
+      "value": "2022-03-21"
+    },
+    "locations": [
+      {
+        "address": "5454 Wisconsin Ave.,\nSuite 1725 Chevy Chase,\nMD 20815",
+        "gps_coordinates": [
+          "38.962789082577665",
+          "-77.08724644403178"
+        ],
+        "map_url": "https://maps.google.com/maps/@38.962789082577665,-77.08724644403178,19z",
+        "referral_type": [
+          "direct"
+        ],
+        "url": "https://sleepdoc.com/about#facility"
+      }
+    ],
+    "name": "The Center for Sleep & Wake Disorders",
+    "name_key": "center for sleep & wake disorders",
+    "procedure": "1. [register as a patient](https://sleepdoc.com/appointments) and [authorise them to e-mail you](http://sleepdoc.com/emailauth)\n2. [make an appointment](https://sleepdoc.com/contact-us)\n3. you may be asked to fill out a sleep diary like one of those shown\n4. your doctor will aim to diagnose your condition, may be able to offer treatment for a common condition (such as [DSPD](https://en.wikipedia.org/wiki/Delayed_sleep_phase_disorder)), or may refer you to someone who specialises in a rare condition (such as [non-24](https://en.wikipedia.org/wiki/Non-24-hour_sleep%E2%80%93wake_disorder))\n",
+    "procedure_type": "researched",
+    "referral_type": [
+      "direct"
+    ],
+    "specialist_type": "physician",
+    "url": "https://sleepdoc.com/"
+  },
+  {
+    "description": "Treats conditions such as insomnia, sleep apnea, circadian rhythm disorders, narcolepsy, and restless leg syndrome.",
+    "forms": [
+      {
+        "display_name": "Johns Hopkins Sleep Disorders Center: Sleep Survey,\npage 6",
+        "find_this_by": "1. Go to https://www.hopkinsmedicine.org/pulmonary/patient-care/sleep-medicine.html\n2. Click the \"Sleep Survey\" link in the middle of the page\n  * the \"Sleep survey\" link near the end of the page is an unrelated questionnaire\n",
+        "gallery": [
+          {
+            "display_name": "Sleep Survey: Sleep Survey",
+            "short_name": "Sleep Survey",
+            "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/The Johns Hopkins Sleep-Wake Diary.jpg",
+            "title": "Sleep Survey",
+            "url": "https://www.hopkinsmedicine.org/pulmonary/patient-care/_docs/johns-hopkins-sleep-survey.pdf#page=6"
+          }
+        ],
+        "inbed_marker": "(none)",
+        "layout": "calendar",
+        "name": "Sleep Survey",
+        "outofbed_marker": "(none)",
+        "page_duration": {
+          "key": "0013",
+          "value": "13 days"
+        },
+        "sharing_status": "found online",
+        "short_name": "Sleep Survey,\npage 6",
+        "sleep_marker": "&#x1FB98;",
+        "start_page": 6,
+        "start_time": {
+          "key": "12",
+          "value": "Noon"
+        },
+        "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/The Johns Hopkins Sleep-Wake Diary.jpg",
+        "total_pages": 1,
+        "url": "https://www.hopkinsmedicine.org/pulmonary/patient-care/_docs/johns-hopkins-sleep-survey.pdf#page=6"
+      },
+      {
+        "display_name": "Johns Hopkins Sleep Disorders Center: Two week sleep diary",
+        "events": [
+          {
+            "key": "C",
+            "value": "coffee, cola or tea"
+          },
+          {
+            "key": "M",
+            "value": "medicine"
+          },
+          {
+            "key": "A",
+            "value": "alcohol"
+          },
+          {
+            "key": "E",
+            "value": "exercise"
+          }
+        ],
+        "find_this_by": "1. Go to https://www.hopkinsmedicine.org/pulmonary/patient-care/sleep-medicine.html\n2. Click the \"Sleep log\" link near the end of the page\n",
+        "gallery": [
+          {
+            "display_name": "Two week sleep diary: Two week sleep diary",
+            "short_name": "Two week sleep diary",
+            "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/Two week sleep diary.jpg",
+            "title": "Two week sleep diary",
+            "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/medical_services/sleep_disorders_center/sleeplog.pdf"
+          }
+        ],
+        "inbed_marker": "&#x7c;",
+        "layout": "calendar",
+        "name": "Two week sleep diary",
+        "outofbed_marker": "(none)",
+        "page_duration": {
+          "key": "0014",
+          "value": "2 weeks"
+        },
+        "sharing_status": "found online",
+        "short_name": "Two week sleep diary",
+        "sleep_marker": "▬",
+        "start_page": 1,
+        "start_time": {
+          "key": "12",
+          "value": "Noon"
+        },
+        "thumb": "/resources/thumbs/The Johns Hopkins Sleep Disorders Center/Two week sleep diary.jpg",
+        "total_pages": 1,
+        "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/medical_services/sleep_disorders_center/sleeplog.pdf"
+      }
+    ],
+    "last_updated": {
+      "key": "001649030400000",
+      "value": "2022-04-04"
+    },
+    "locations": [
+      {
+        "address": "Second Floor\nAsthma and Allergy Building\n5501 Hopkins Bayview Circle\nBaltimore, MD 21224",
+        "gps_coordinates": [
+          "39.289540445574914",
+          "-76.54892399918245"
+        ],
+        "map_url": "https://maps.google.com/maps/@39.289540445574914,-76.54892399918245,19z",
+        "name": "Bayview Medical Center: Sleep Clinic",
+        "referral_type": [
+          "secondary"
+        ],
+        "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/planning_your_visit/jhbmc-campus-map.pdf"
+      },
+      {
+        "address": "Fourth Floor\nAsthma and Allergy Building\n5501 Hopkins Bayview Circle\nBaltimore, MD 21224",
+        "gps_coordinates": [
+          "39.289540445574914",
+          "-76.54892399918245"
+        ],
+        "map_url": "https://maps.google.com/maps/@39.289540445574914,-76.54892399918245,19z",
+        "name": "Bayview Medical Center: Sleep Lab",
+        "referral_type": [
+          "secondary"
+        ],
+        "url": "https://www.hopkinsmedicine.org/johns_hopkins_bayview/_docs/planning_your_visit/jhbmc-campus-map.pdf"
+      },
+      {
+        "address": "11085 Little Patuxent Parkway, Suite 210\nMedical Arts Building\nColumbia, MD 21044",
+        "gps_coordinates": [
+          "39.21410769705409",
+          "-76.88474835693953"
+        ],
+        "map_url": "https://maps.google.com/maps/@39.21410769705409,-76.88474835693953,19z",
+        "name": "Center for Sleep and Wellness",
+        "referral_type": [
+          "direct"
+        ],
+        "url": "https://www.hopkinsmedicine.org/howard_county_general_hospital/services/diagnostics_testing/sleep_center/"
+      }
+    ],
+    "name": "The Johns Hopkins Sleep Disorders Center",
+    "name_key": "johns hopkins sleep disorders center",
+    "procedure": "1. [schedule an appointment](https://www.hopkinsmedicine.org/howard_county_general_hospital/services/diagnostics_testing/sleep_center/sleep_center_appt.html) at the Center for Sleep and Wellness, or a physician refers you to the Sleep Disorders Center\n2. you may be asked to fill out a sleep diary like one of those shown\n3. visit one of the specified locations\n4. your doctor will aim to diagnose your condition, and may be able to offer treatment\n",
+    "procedure_type": "researched",
+    "referral_type": [
+      "secondary",
+      "direct"
+    ],
+    "specialist_type": "physician",
+    "url": "https://www.hopkinsmedicine.org/pulmonary/patient-care/sleep-medicine.html"
+  },
+  {
+    "description": "[Dr. Karen M. Baker](http://www.orlandosleep.com/) is a medical director of the Center for Sleep Disorders.",
+    "forms": [
+      {
+        "display_name": "Dr. Karen M. Baker",
+        "events": [
+          {
+            "key": "C",
+            "value": "coffee, cola, or tea"
+          },
+          {
+            "key": "M",
+            "value": "medicine"
+          },
+          {
+            "key": "A",
+            "value": "alcohol"
+          },
+          {
+            "key": "E",
+            "value": "exercise"
+          }
+        ],
+        "find_this_by": "clicking on the &ldquo;Sleep facts & info&rdquo; menu on [her home page](http://www.orlandosleep.com/)",
+        "gallery": [
+          {
+            "display_name": "Dr. Karen M. Baker",
+            "short_name": "Dr. Karen M. Baker",
+            "thumb": "/resources/thumbs/Dr. Karen M. Baker.jpg",
+            "title": "Dr. Karen M. Baker",
+            "url": "http://www.orlandosleep.com/forms/sleepdiary_v2.pdf"
+          }
+        ],
+        "inbed_marker": "&#x7c;",
+        "layout": "calendar",
+        "outofbed_marker": "(none)",
+        "page_duration": {
+          "key": "0014",
+          "value": "2 weeks"
+        },
+        "sharing_status": "found online",
+        "short_name": "Dr. Karen M. Baker",
+        "sleep_marker": "▬",
+        "start_page": 1,
+        "start_time": {
+          "key": "12",
+          "value": "Noon"
+        },
+        "thumb": "/resources/thumbs/Dr. Karen M. Baker.jpg",
+        "total_pages": 1,
+        "url": "http://www.orlandosleep.com/forms/sleepdiary_v2.pdf"
+      }
+    ],
+    "last_updated": {
+      "key": "001647820800000",
+      "value": "2022-03-21"
+    },
+    "locations": [
+      {
+        "address": "501 E. King Street,\nOrlando,\nFL 32803",
+        "gps_coordinates": [
+          "28.57840750276319",
+          "-81.3707357577434"
+        ],
+        "map_url": "https://maps.google.com/maps/@28.57840750276319,-81.3707357577434,19z",
+        "name": "Orlando Main Campus",
+        "referral_type": [
+          "secondary"
+        ]
+      },
+      {
+        "address": "7727 Lake Underhill Road,\nOrlando,\nFlorida 32822",
+        "gps_coordinates": [
+          "28.540574207076485",
+          "-81.28042285192419"
+        ],
+        "map_url": "https://maps.google.com/maps/@28.540574207076485,-81.28042285192419,19z",
+        "name": "East Orlando",
+        "referral_type": [
+          "secondary"
+        ]
+      },
+      {
+        "address": "601 East Altamonte Drive,\nAltamonte Springs,\nFlorida 32701",
+        "gps_coordinates": [
+          "28.666869116019466",
+          "-81.36967268657777"
+        ],
+        "map_url": "https://maps.google.com/maps/@28.666869116019466,-81.36967268657777,19z",
+        "name": "Altamonte",
+        "referral_type": [
+          "secondary"
+        ]
+      },
+      {
+        "address": "2488 E. Irlo Bronson Memorial Hwy. (US 192/441),\nKissimmee,\nFL 34744",
+        "gps_coordinates": [
+          "28.277648997831967",
+          "-81.34272387309291"
+        ],
+        "map_url": "https://maps.google.com/maps/@28.277648997831967,-81.34272387309291,19z",
+        "name": "Partin Settlement Health Park",
+        "referral_type": [
+          "secondary"
+        ]
+      },
+      {
+        "address": "1480 W. Orange Blossom Trail (US 441),\nApopka,\nFL 32712",
+        "gps_coordinates": [
+          "28.68570028373127",
+          "-81.53690937123332"
+        ],
+        "map_url": "https://maps.google.com/maps/@28.68570028373127,-81.53690937123332,19z",
+        "name": "Apopka",
+        "referral_type": [
+          "secondary"
+        ]
+      }
+    ],
+    "name": "Dr. Karen M. Baker",
+    "name_key": "karen m. baker",
+    "procedure": "1. a physician will refer you if they feel it is necessary.  If no physician referral is available, [make an appointment directly](http://www.orlandosleep.com/make-an-appointment.htm)\n2. [make an appointment](http://www.orlandosleep.com/appointment-form.htm)\n3. you may be asked to fill out a sleep diary like the one shown\n4. your doctor will aim to diagnose your condition, may be able to offer treatment for a common condition (such as [DSPD](https://en.wikipedia.org/wiki/Delayed_sleep_phase_disorder)), or may refer you to someone who specialises in a rare condition (such as [non-24](https://en.wikipedia.org/wiki/Non-24-hour_sleep%E2%80%93wake_disorder))\n",
+    "procedure_type": "researched",
+    "referral_type": [
+      "secondary"
+    ],
+    "specialist_type": "physician",
+    "url": "http://www.orlandosleep.com/"
+  },
+  {
+    "description": "Offers state-of-the-art, comprehensive care for patients suffering from disorders including sleep apnea, restless legs syndrome, night terrors, snoring, insomnia and narcolepsy.",
+    "forms": [
+      {
+        "display_name": "NorthShore Sleep Center: Two Week Sleep Log",
+        "find_this_by": "1. Go to https://www.northshore.org/sleep-center/\n2. Click on \"Patient Forms\" in the left menu\n3. Click on \"Two Week Sleep Log\"\n",
+        "gallery": [
+          {
+            "display_name": "Two Week Sleep Log",
+            "short_name": "Two Week Sleep Log",
+            "thumb": "/resources/thumbs/NorthShore Sleep Center.jpg",
+            "title": "Two Week Sleep Log",
+            "url": "https://www.northshore.org/globalassets/sleepcenter/2weeksleeplog.pdf"
+          }
+        ],
+        "inbed_marker": "&darr;",
+        "layout": "calendar",
+        "name": "Two Week Sleep Log",
+        "outofbed_marker": "&uarr;",
+        "page_duration": {
+          "key": "0014",
+          "value": "14 days"
+        },
+        "sharing_status": "found online",
+        "short_name": "Two Week Sleep Log",
+        "sleep_marker": "▬",
+        "start_page": 1,
+        "start_time": {
+          "key": "18",
+          "value": "6pm"
+        },
+        "thumb": "/resources/thumbs/NorthShore Sleep Center.jpg",
+        "total_pages": 1,
+        "url": "https://www.northshore.org/globalassets/sleepcenter/2weeksleeplog.pdf"
+      }
+    ],
+    "last_updated": {
+      "key": "001649462400000",
+      "value": "2022-04-09"
+    },
+    "locations": [
+      {
+        "address": "9977 Woods Drive\nSkokie,\nIL 60077",
+        "gps_coordinates": [
+          "42.061500035075575",
+          "-87.76042044195773"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.061500035075575,-87.76042044195773,19z",
+        "name": "Old Orchard Sleep Center",
+        "referral_type": [
+          "direct"
+        ]
+      },
+      {
+        "address": "2151 Waukegan Road\nBannockburn,\nIL 60015",
+        "fax": "847.236.9637",
+        "gps_coordinates": [
+          "42.192501074063905",
+          "-87.85818768489362"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.192501074063905,-87.85818768489362,19z",
+        "name": "Bannockburn Sleep Center",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.236.1300"
+      },
+      {
+        "address": "2650 Ridge Avenue,\nEvanston,\nIL 60201",
+        "gps_coordinates": [
+          "42.06573038320172",
+          "-87.68442312438462"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.06573038320172,-87.68442312438462,19z",
+        "name": "Evanston Hospital",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.570.2000",
+        "url": "https://www.northshore.org/locations/our-hospitals/evanston-hospital/"
+      },
+      {
+        "address": "2100 Pfingsten Road,\nGlenview\nIL 60026",
+        "gps_coordinates": [
+          "42.092992193320626",
+          "-87.85421200035263"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.092992193320626,-87.85421200035263,19z",
+        "name": "Glenbrook Hospital",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.657.5800"
+      },
+      {
+        "address": "7900 Rollins Rd.\nSuite B1300\nGurnee,\nIL 60031",
+        "fax": "847.236.9637",
+        "gps_coordinates": [
+          "42.384974224740624",
+          "-87.99647169737688"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.384974224740624,-87.99647169737688,19z",
+        "name": "Gurnee Medical Office Building",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.236.1300"
+      },
+      {
+        "address": "777 Park Avenue West,\nHighland Park,\nIL 60035",
+        "gps_coordinates": [
+          "42.19142955063223",
+          "-87.8084486035028"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.19142955063223,-87.8084486035028,19z",
+        "name": "Highland Park Hospital",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.432.8000",
+        "url": "https://www.northshore.org/locations/our-hospitals/highland-park-hospital/"
+      },
+      {
+        "address": "920 Milwaukee Ave.\nSuite 2100\nLincolnshire,\nIL 60069",
+        "fax": "847.570.2984",
+        "gps_coordinates": [
+          "42.183534386843206",
+          "-87.92753459645732"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.183534386843206,-87.92753459645732,19z",
+        "name": "Lincolnshire Medical Group Office building",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.663.8200"
+      },
+      {
+        "address": "9600 Gross Point Road,\nSkokie,\nIL 60076",
+        "gps_coordinates": [
+          "42.05672098158611",
+          "-87.74040640008995"
+        ],
+        "map_url": "https://maps.google.com/maps/@42.05672098158611,-87.74040640008995,19z",
+        "name": "Skokie Hospital",
+        "referral_type": [
+          "direct"
+        ],
+        "tel": "847.677.9600",
+        "url": "https://www.northshore.org/locations/our-hospitals/skokie-hospital/"
+      }
+    ],
+    "name": "NorthShore Sleep Center",
+    "name_key": "northshore sleep center",
+    "procedure": "1. [call their main office number](tel:847.663.8200) to book an appointment, or [schedule an appointment](https://www.northshore.org/OpenScheduling/PhysicianDirectSchedule.aspx?pid=7374) with [Richard John Munson, M.D.](https://www.northshore.org/apps/findadoctor/physicians/richard-john-munson)\n3. you may be asked to fill out some of [their patient forms](https://www.northshore.org/sleep-center/patients/)\n4. visit one of the specified locations\n5. you may be referred for an outpatient sleep study at a [sleep lab](https://www.northshore.org/sleep-center/#sleep-center)\n6. your doctor will aim to diagnose your condition, may be able to offer treatment for a common condition (such as [DSPD](https://en.wikipedia.org/wiki/Delayed_sleep_phase_disorder)), or may refer you to someone who specialises in a rare condition (such as [non-24](https://en.wikipedia.org/wiki/Non-24-hour_sleep%E2%80%93wake_disorder))\n",
+    "procedure_type": "researched",
+    "referral_type": [
+      "direct"
+    ],
+    "specialist_type": "physician",
+    "url": "https://www.northshore.org/sleep-center/"
+  },
+  {
+    "description": "[Raleigh Neurology Associates](https://www.raleighneurology.com/about-us/who-we-are/) provide a [Sleep Medicine Program](https://www.raleighneurology.com/specialties-services/sleep-medicine/) among many other services.",
+    "forms": [
+      {
+        "display_name": "Raleigh Neurology Associates",
+        "gallery": [
+          {
+            "display_name": "Raleigh Neurology Associates",
+            "short_name": "Raleigh Neurology Associates",
+            "thumb": "/resources/thumbs/Raleigh Neurology Associates.jpg",
+            "title": "Raleigh Neurology Associates",
+            "url": "/resources/forms/Raleigh Neurology Associates/Raleigh_Neurology_Sleep_Chart_blank.pdf"
+          }
+        ],
+        "inbed_marker": "&darr;",
+        "layout": "calendar",
+        "outofbed_marker": "&uarr;",
+        "page_duration": {
+          "key": "0060",
+          "value": "2 months"
+        },
+        "sharing_status": "shared with consent",
+        "short_name": "Raleigh Neurology Associates",
+        "sleep_marker": "▬",
+        "start_page": 1,
+        "start_time": {
+          "key": "18",
+          "value": "6pm"
+        },
+        "thumb": "/resources/thumbs/Raleigh Neurology Associates.jpg",
+        "total_pages": 1,
+        "url": "/resources/forms/Raleigh Neurology Associates/Raleigh_Neurology_Sleep_Chart_blank.pdf"
+      }
+    ],
+    "last_updated": {
+      "key": "001647820800000",
+      "value": "2022-03-21"
+    },
+    "locations": [
+      {
+        "address": "1520 & 1540 Sunday Drive,\nRaleigh,\nNC 27607",
+        "gps_coordinates": [
+          "35.80053098712522",
+          "-78.73183784706966"
+        ],
+        "map_url": "https://maps.google.com/maps/@35.80053098712522,-78.73183784706966,19z",
+        "name": "Main office",
+        "referral_type": [
+          "direct"
+        ],
+        "url": "https://www.raleighneurology.com/about-us/locations-directions/#locationwrap"
+      },
+      {
+        "address": "4111 Ben Franklin Blvd.,\nDurham,\nNC 27704",
+        "gps_coordinates": [
+          "36.04620121418172",
+          "-78.89819192723982"
+        ],
+        "map_url": "https://maps.google.com/maps/@36.04620121418172,-78.89819192723982,19z",
+        "name": "Durham office",
+        "referral_type": [
+          "direct"
+        ],
+        "url": "https://www.raleighneurology.com/about-us/locations-directions/#durham"
+      }
+    ],
+    "name": "Raleigh Neurology Associates",
+    "name_key": "raleigh neurology associates",
+    "procedure": "1. [contact Raleigh Neurology Associates](https://www.raleighneurology.com/about-us/ways-to-contact-us/#makeappointment)\n   * you will need to contact them by phone before you can get access to their telehealth site\n2. optionally ask for a telehealth account\n   * only necessary if you prefer to contact your doctor online\n3. ask to see your preferred doctor\n   * [Dr. Thomas Kirk, MD](https://www.raleighneurology.com/about-us/meet-our-physicians/thomas-kirk-md/) sees patients with any sleep concern\n   * [Dr. Thomas Perkins, MD, PhD](https://www.raleighneurology.com/about-us/meet-our-physicians/thomas-perkins-md-phd/) specialises in circadian rhythm disorders\n4. appointments can be at one of the specified locations, by phone, or by video chat\n5. you may be asked to fill out a sleep diary like the one shown\n6. your doctor will aim to diagnose your condition, may be able to offer treatment for a common condition (such as [DSPD](https://en.wikipedia.org/wiki/Delayed_sleep_phase_disorder)), or may refer you to someone who specialises in a rare condition (such as [non-24](https://en.wikipedia.org/wiki/Non-24-hour_sleep%E2%80%93wake_disorder))\n",
+    "procedure_type": "confirmed",
+    "referral_type": [
+      "direct"
+    ],
+    "specialist_type": "physician",
+    "url": "https://www.raleighneurology.com/about-us/who-we-are/"
+  },
+  {
+    "description": "[The Sleep Support Project](https://sleepsupportproject.org/about/) are qualified BACP Registered counsellors.  Their [downloadable sleep diary](https://sleepsupportproject.org/sleep-diary-2/) is only available to members.\n",
+    "last_updated": {
+      "key": "001647820800000",
+      "value": "2022-03-21"
+    },
+    "locations": [
+      {
+        "address": "Knowsley Place,\nKnowsley St,\nBury\nBL9 0SW",
+        "gps_coordinates": [
+          "53.59028181972621",
+          "-2.2989824405785266"
+        ],
+        "map_url": "https://maps.google.com/maps/@53.59028181972621,-2.2989824405785266,19z",
+        "referral_type": [
+          "direct"
+        ]
+      }
+    ],
+    "name": "The Sleep Support Project",
+    "name_key": "sleep support project",
+    "procedure": "1. make an initial consultation through [their contact form](https://www.raleighneurology.com/about-us/ways-to-contact-us/#makeappointment)\n3. you may be asked to fill out a sleep diary like [the one on their site](https://sleepsupportproject.org/sleep-diary-2/)\n4. your doctor will aim to diagnose your condition, may be able to offer treatment for a common condition (such as [DSPD](https://en.wikipedia.org/wiki/Delayed_sleep_phase_disorder)), or may refer you to someone who specialises in a rare condition (such as [non-24](https://en.wikipedia.org/wiki/Non-24-hour_sleep%E2%80%93wake_disorder))\n",
+    "procedure_type": "researched",
+    "referral_type": [
+      "direct"
+    ],
+    "specialist_type": "physician",
+    "url": "https://sleepsupportproject.org/about/"
+  },
+  {
+    "description": "[UNC Health](https://www.unchealthcare.org/) is a not-for-profit integrated health care system owned by the state of North Carolina.  [The Sleep Disorders Center](https://www.uncmedicalcenter.org/uncmc/care-treatment/neurology/sleep-disorders/) provides care to patients who have a wide range of sleep-related disorders.\n",
+    "last_updated": {
+      "key": "001647993600000",
+      "value": "2022-03-23"
+    },
+    "locations": [
+      {
+        "address": "300 Meadowmont Village Circle,\nSuite 202,\nChapel Hill,\nNC 27517",
+        "gps_coordinates": [
+          "35.904673699064354",
+          "-79.01186058561848"
+        ],
+        "map_url": "https://maps.google.com/maps/@35.904673699064354,-79.01186058561848,19z",
+        "name": "Neurology Clinic",
+        "referral_type": [
+          "secondary"
+        ],
+        "url": "https://www.uncmedicalcenter.org/uncmc/hospitals-locations/profile/unc-hospitals-neurology-clinic/"
+      }
+    ],
+    "name": "UNC Sleep Disorders Center",
+    "name_key": "unc sleep disorders center",
+    "procedure": "1. a physician will refer you to [one of their doctors](https://www.med.unc.edu/neurology/divisions/sleep-1/sleep-team/)\n   * you may be able to ask about [their e-consult service](https://www.med.unc.edu/neurology/new-patient-referrals-1/adult-referrals/adult-neurology-e-consults/)\n2. they will call you (usually within about 14-21 days) to give a response and schedule an appointment if necessary\n3. go for one or more in-person appointments at the clinic\n4. your doctor will aim to diagnose your condition, and may be able to offer treatment\n",
+    "procedure_type": "confirmed",
+    "referral_type": [
+      "secondary"
+    ],
+    "specialist_type": "physician",
+    "url": "https://www.med.unc.edu/neurology/divisions/sleep-1/"
+  }
+]
