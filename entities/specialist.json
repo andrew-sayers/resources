@@ -698,5 +698,150 @@
     ],
     "specialist_type": "physician",
     "url": "https://www.med.unc.edu/neurology/divisions/sleep-1/"
+  },
+# TODO: check and push this new entry:
+  {
+    "name": "The Center for Sleep Medicine",
+    "description": "the largest sleep medicine practice in the State of Illinois",
+    "website": "https://www.sleepmedcenter.com/",
+    "admin_contact": "",
+    "specialist_type": "physician",
+    "referral_types": [
+      "direct"
+    ],
+    "registration_required": false,
+    "registration_tel": "",
+    "registration_fax": "",
+    "registration_other": "",
+    "appointment_types": [
+      "in-person"
+    ],
+    "appointment_type_other": "",
+    "appointment_required": true,
+    "appointment_url": "https://www.sleepmedcenter.com/#contact",
+    "appointment_tel": "(708) 364-0261",
+    "appointment_fax": "",
+    "appointment_other": "",
+    "before_first": "follow [the recommendations to prepare for your visit](https://www.sleepmedcenter.com/patient-information/)\n",
+    "between_appointments": "",
+    "outcomes": [
+      "treat",
+      "refer",
+      "diagnose"
+    ],
+    "outcome_other": "",
+    "registration_url": "",
+    "procedure_type": "researched",
+    "locations": [
+      {
+        "name": "Naperville",
+        "default_referrals": true,
+        "referrals": [],
+        "address": "1924 Springbrook Square Drive\nNaperville, IL 60564",
+        "gps": "41.73201031524646, -88.20366808406986",
+        "referral_types": [],
+        "tel": "(630) 527-9950",
+        "fax": "(630) 527-9953 ",
+        "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be14"
+      },
+      {
+        "name": "Chicago",
+        "default_referrals": true,
+        "referrals": [],
+        "address": "680 N. Lake Shore Drive,\nSuite 1210\nChicago, IL 60611",
+        "gps": "41.8946691, -87.61677888499563",
+        "referral_types": [],
+        "fax": "(312) 587-8376 ",
+        "tel": "(312) 587-3765",
+        "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be23"
+      },
+      {
+        "name": "Glenview",
+        "default_referrals": true,
+        "referrals": [],
+        "address": "2501 Compass Road, Suite 105\nGlenview, IL 60026",
+        "gps": "2501 Compass Road, Suite 105 Glenview, IL 60026",
+        "referral_types": [],
+        "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be2a",
+        "tel": "(847)223-0717",
+        "fax": "(847) 768-9925 "
+      },
+      {
+        "name": "Libertyville",
+        "default_referrals": true,
+        "referrals": [],
+        "address": "900 Technology Way, Suite 120\nLibertyville, IL 60048",
+        "gps": "42.29334584068059, -87.99720340398628",
+        "referral_types": [],
+        "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be2f",
+        "tel": "(847) 231-4721",
+        "fax": "(847) 231-4722"
+      },
+      {
+        "name": "Orland Park",
+        "default_referrals": true,
+        "referrals": [],
+        "address": "10640 165th Street\nOrland Park, IL 60467",
+        "gps": "41.59073293415194, -87.88066427567132",
+        "referral_types": [],
+        "tel": "(708) 364-0261",
+        "fax": "(708) 364-0269",
+        "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be35"
+      }
+    ],
+    "forms": [
+      {
+        "instructions_to_find": "https://www.sleepmedcenter.com/patient-information/ > click \"Adult Questionnaire and Consent Form\"",
+        "name": "SLEEP SYMPTOM AND MEDICAL QUESTIONNAIRE, page 5",
+        "doc_type": "form",
+        "shared": "found online",
+        "gallery": [
+          {
+            "thumb": "/resources/thumbs/SLEEP SYMPTOM AND MEDICAL QUESTIONNAIRE, page 5.jpg"
+          }
+        ],
+#        TODO: fill in the values below:
+#        layout: calendar
+#        page duration: # e.g. 14 days or 2 weeks
+#        total pages: # e.g. 1 or variable
+#        start time: # e.g. Noon or 6pm
+#        in-bed marker: # e.g. "&darr;" or (none)
+#        out-of-bed marker: # e.g. "&uarr;" or (none)
+#        sleep marker: # e.g. ▬ or ▮
+#        events:
+#          -
+#            key: # e.g. C
+#            value: # e.g. coffee, cola, or tea
+#          ...
+#
+      },
+      {
+        "shared": "found online",
+        "instructions_to_find": "https://www.sleepmedcenter.com/patient-information/ > click \"Adult Insomnia Questionnaire and Consent Form\"",
+        "name": "Behavioral Sleep Medicine Program: Initial Evaluation Questionnaire, page 2",
+        "doc_type": "form",
+        "gallery": [
+          {
+            "thumb": "/resources/thumbs/Behavioral Sleep Medicine Program: Initial Evaluation Questionnaire, page 2.jpg"
+          }
+        ],
+#        TODO: fill in the values below:
+#        layout: calendar
+#        page duration: # e.g. 14 days or 2 weeks
+#        total pages: # e.g. 1 or variable
+#        start time: # e.g. Noon or 6pm
+#        in-bed marker: # e.g. "&darr;" or (none)
+#        out-of-bed marker: # e.g. "&uarr;" or (none)
+#        sleep marker: # e.g. ▬ or ▮
+#        events:
+#          -
+#            key: # e.g. C
+#            value: # e.g. coffee, cola, or tea
+#          ...
+#
+      }
+    ],
+    "reports": [],
+    "last_updated": "2022-04-25"
   }
 ]
