@@ -80,8 +80,6 @@ jobs:
                 /^New (specialist|software):/,
                 (_,entity_type) => body.replace(/```(.*)```/s, (_,text) => {
                     const entry = JSON.parse(text);
-                    const filename = `entities/${entity_type}.json`;
-                    const entries = JSON.parse(fs.readFileSync(filename));
                     let todo_list = '';
 
                     entry.last_updated = new Date().toISOString().split("T")[0];
@@ -110,19 +108,9 @@ jobs:
             - [ ] [Generate docs from resources](../../docs/actions/workflows/generate-from-resources.yml)
             - [ ] Any last checks/process improvements`
 
-                    entries.push("\uE003");
-                    entries.push(entry);
-
-                    let new_entry_text = JSON.stringify(entries,null,'  '), line_number = 1;
-                    // find the text we added:
-                    for ( let n=0; n!=new_entry_text.length; ++n ) {
-                        switch ( new_entry_text[n] ) {
-                        case "\n"    : ++line_number; break;
-                        case "\uE003": n = new_entry_text.length-1;
-                        }
-                    }
-                    new_entry_text = (
-                        new_entry_text
+                    let entry_text = JSON.stringify(entry,null,'  ');
+                    entry_text = (
+                        entry_text
                             .replace(
                                 /"\uE000"/g,
                                 `[
@@ -159,19 +147,21 @@ jobs:
                             .replace( /\n*$/, "\n" )
                     );
 
-                    fs.writeFileSync(filename,new_entry_text);
+                    const filename = `entities/${entity_type}/${Math.floor(new Date().getTime()/1000)}-${entry.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.json`;
+                    fs.writeFileSync(filename, entry_text);
 
-                    const spawn = require("child_process").spawnSync;
+                    const spawnSync = require("child_process").spawnSync;
 
-                    spawn('git', ['commit',filename,'-m','First draft for issue #' + issue_number + ', thanks to @' + author]);
+                    spawnSync('git', ['add',filename]);
+                    spawnSync('git', ['commit',filename,'-m','First draft for issue #' + issue_number + ', thanks to @' + author]);
 
-                    spawn('git', ['push','origin','HEAD:'+branch_name]);
+                    spawnSync('git', ['push','origin','HEAD:'+branch_name]);
 
                     let message = `Thanks for contributing!
 
-            Here's [an auto-generated first draft](https://github.com/${context.repo.owner}/${context.repo.repo}/tree/${branch_name}/${filename}#L${line_number}) based on your information.
+            Here's [an auto-generated first draft](https://github.com/${context.repo.owner}/${context.repo.repo}/tree/${branch_name}/${filename}) based on your information.
 
-            If you'd like to edit this draft yourself, please [fork this repository](https://github.com/${context.repo.owner}/${context.repo.repo}/fork) then [edit \`${filename}\`](https://github.com/${context.repo.owner}/${context.repo.repo}/edit/${branch_name}/${filename}#L${line_number}).  Just let us know the repository we need to look at.
+            If you'd like to edit this draft yourself, please [fork this repository](https://github.com/${context.repo.owner}/${context.repo.repo}/fork) then [edit \`${filename}\`](https://github.com/${context.repo.owner}/${context.repo.repo}/edit/${branch_name}/${filename}).  Just let us know the repository we need to look at.
 
             Otherwise, someone should come along in a day or two and finish off the last few jobs:
 
