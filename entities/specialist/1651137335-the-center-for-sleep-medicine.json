@@ -1,0 +1,139 @@
+{
+  "name": "The Center for Sleep Medicine",
+  "description": "the largest sleep medicine practice in the State of Illinois",
+  "admin_contact": "",
+  "specialist_type": "physician",
+  "referral_types": [
+    "direct"
+  ],
+  "registration_required": false,
+  "appointment_types": [
+    "in-person"
+  ],
+  "before_first": "follow [the recommendations to prepare for your visit](https://www.sleepmedcenter.com/patient-information/)\n",
+  "between_appointments": "",
+  "outcomes": [
+    "treat",
+    "refer",
+    "diagnose"
+  ],
+  "outcome_other": "",
+  "booking_required": true,
+  "booking_url": "https://www.sleepmedcenter.com/#contact",
+  "booking_tel": "(708) 364-0261",
+  "url": "https://www.sleepmedcenter.com/",
+  "procedure_type": "researched",
+  "locations": [
+    {
+      "name": "Naperville",
+      "address": "1924 Springbrook Square Drive\nNaperville, IL 60564",
+      "gps": [
+        "41.73201031524646",
+        "-88.20366808406986"
+      ],
+      "tel": "(630) 527-9950",
+      "fax": "(630) 527-9953",
+      "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be14"
+    },
+    {
+      "name": "Chicago",
+      "address": "680 N. Lake Shore Drive,\nSuite 1210\nChicago, IL 60611",
+      "gps": [
+        "41.8946691",
+        "-87.61677888499563"
+      ],
+      "fax": "(312) 587-8376",
+      "tel": "(312) 587-3765",
+      "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be23"
+    },
+    {
+      "name": "Glenview",
+      "address": "2501 Compass Road, Suite 105\nGlenview, IL 60026",
+      "gps": [
+        "42.09817396707129",
+        "-87.81927269215404"
+      ],
+      "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be2a",
+      "tel": "(847)223-0717",
+      "fax": "(847) 768-9925"
+    },
+    {
+      "name": "Libertyville",
+      "address": "900 Technology Way, Suite 120\nLibertyville, IL 60048",
+      "gps": [
+        "42.29334584068059",
+        "-87.99720340398628"
+      ],
+      "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be2f",
+      "tel": "(847) 231-4721",
+      "fax": "(847) 231-4722"
+    },
+    {
+      "name": "Orland Park",
+      "address": "10640 165th Street\nOrland Park, IL 60467",
+      "gps": [
+        "41.59073293415194",
+        "-87.88066427567132"
+      ],
+      "tel": "(708) 364-0261",
+      "fax": "(708) 364-0269",
+      "url": "https://www.sleepmedcenter.com/contact-us#tab_6262013e2be35"
+    }
+  ],
+  "forms": [
+    {
+      "instructions_to_find": "https://www.sleepmedcenter.com/patient-information/ > click \"Adult Questionnaire and Consent Form\"",
+      "name": "SLEEP SYMPTOM AND MEDICAL QUESTIONNAIRE, page 5",
+      "sharing_status": "found online",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/SLEEP SYMPTOM AND MEDICAL QUESTIONNAIRE, page 5.jpg",
+          "url": "https://www.sleepmedcenter.com/wp-content/uploads/2021/08/1_Adult_Sleep_Study_Questions_Consent_110118.pdf"
+        }
+      ],
+#      TODO: fill in the values below:
+#      "layout": "calendar",
+#      "page_duration": # e.g. "14 days" or "2 weeks"
+#      "total_pages": # e.g. 1 or "variable"
+#      "start_time": # e.g. "Noon" or "6pm"
+#      "inbed_marker": # e.g. "&darr;" or "(none)"
+#      "outofbed_marker": # e.g. "&uarr;" or "(none)"
+#      "sleep_marker": # e.g. ▬ or ▮
+#      "events": [
+#        {
+#          "key": # e.g. "C"
+#          "value": # e.g. "coffee, cola, or tea"
+#        },
+#           ...
+#       ]
+    },
+    {
+      "instructions_to_find": "https://www.sleepmedcenter.com/patient-information/ > click \"Adult Insomnia Questionnaire and Consent Form\"",
+      "name": "Behavioral Sleep Medicine Program: Initial Evaluation Questionnaire, page 2",
+      "sharing_status": "found online",
+      "gallery": [
+        {
+          "thumb": "/resources/thumbs/Behavioral Sleep Medicine Program: Initial Evaluation Questionnaire, page 2.jpg",
+          "url": "https://www.sleepmedcenter.com/wp-content/uploads/2021/08/3_Adult_Insomnia_Questions_Consent_120817.pdf"
+        }
+      ],
+#      TODO: fill in the values below:
+#      "layout": "calendar",
+#      "page_duration": # e.g. "14 days" or "2 weeks"
+#      "total_pages": # e.g. 1 or "variable"
+#      "start_time": # e.g. "Noon" or "6pm"
+#      "inbed_marker": # e.g. "&darr;" or "(none)"
+#      "outofbed_marker": # e.g. "&uarr;" or "(none)"
+#      "sleep_marker": # e.g. ▬ or ▮
+#      "events": [
+#        {
+#          "key": # e.g. "C"
+#          "value": # e.g. "coffee, cola, or tea"
+#        },
+#           ...
+#       ]
+    }
+  ],
+  "reports": [],
+  "last_updated": "2022-04-27"
+}
