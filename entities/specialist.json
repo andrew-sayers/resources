@@ -533,7 +533,6 @@
     "specialist_type": "physician",
     "url": "https://www.med.unc.edu/neurology/divisions/sleep-1/"
   },
-# TODO: check and push this new entry:
   {
     "name": "The Center for Sleep Medicine",
     "description": "the largest sleep medicine practice in the State of Illinois",
@@ -627,21 +626,10 @@
             "url": "https://www.sleepmedcenter.com/wp-content/uploads/2021/08/1_Adult_Sleep_Study_Questions_Consent_110118.pdf"
           }
         ],
-#        TODO: fill in the values below:
-#        "layout": "calendar",
-#        "page_duration": # e.g. "14 days" or "2 weeks"
-#        "total_pages": # e.g. 1 or "variable"
-#        "start_time": # e.g. "Noon" or "6pm"
-#        "inbed_marker": # e.g. "&darr;" or "(none)"
-#        "outofbed_marker": # e.g. "&uarr;" or "(none)"
-#        "sleep_marker": # e.g. ▬ or ▮
-#        "events": [
-#          {
-#            "key": # e.g. "C"
-#            "value": # e.g. "coffee, cola, or tea"
-#          },
-#             ...
-#         ]
+        "layout": "questionnaire",
+        "start_page": 5,
+        "total_pages": 1,
+        "page_duration": "7 days"
       },
       {
         "instructions_to_find": "https://www.sleepmedcenter.com/patient-information/ > click \"Adult Insomnia Questionnaire and Consent Form\"",
@@ -653,21 +641,10 @@
             "url": "https://www.sleepmedcenter.com/wp-content/uploads/2021/08/3_Adult_Insomnia_Questions_Consent_120817.pdf"
           }
         ],
-#        TODO: fill in the values below:
-#        "layout": "calendar",
-#        "page_duration": # e.g. "14 days" or "2 weeks"
-#        "total_pages": # e.g. 1 or "variable"
-#        "start_time": # e.g. "Noon" or "6pm"
-#        "inbed_marker": # e.g. "&darr;" or "(none)"
-#        "outofbed_marker": # e.g. "&uarr;" or "(none)"
-#        "sleep_marker": # e.g. ▬ or ▮
-#        "events": [
-#          {
-#            "key": # e.g. "C"
-#            "value": # e.g. "coffee, cola, or tea"
-#          },
-#             ...
-#         ]
+        "layout": "questionnaire",
+        "start_page": 2,
+        "total_pages": 1,
+        "page_duration": "7 days"
       }
     ],
     "reports": [],
