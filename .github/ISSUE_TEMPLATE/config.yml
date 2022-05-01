@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Add a new specialist
+    url: https://sleepdiary.github.io/resources/new-specialist.html
+    about: for entries on the specialists page
+  - name: Add new software
+    url: https://sleepdiary.github.io/resources/new-software.html
+    about: for entries on the software page
