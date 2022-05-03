@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <style type="text/css">
+         #app-container {
+             display:none;
+         }
+         #app-container.mounted {
+             display: initial;
+         }
+         .left-line {
+             border-left: 1px solid rgba(0,0,0,.12);margin-left:12px;padding-left:18px
+         }
+        </style>
+    </head>
+    <body>
+        <div id="app-container">
+            <v-app>
+                <v-main>
+
+                    <div
+                      style="position:absolute;max-width:600px;top:1em;left:50%;transform:translateX(-50%)"
+                      ><v-card>
+
+                        <v-stepper
+                          v-model="current_step"
+                          vertical
+                          non-linear
+                        >
+                            <v-stepper-step
+                              editable
+                              :complete="!step_1_incomplete"
+                              step="1"
+                            >
+                                General information
+                                <small>Thanks for taking the time!</small>
+                            </v-stepper-step>
+
+                            <v-stepper-content step="1">
+                                <div class="pl-2 pr-4">
+                                    <v-alert
+                                      border="left"
+                                      type="warning"
+                                      icon="mdi-github"
+                                    >
+                                        Unless you've been told otherwise, you will need<br/><a href="https://github.com/signup">a GitHub account</a> to submit this form.
+                                    </v-alert>
+
+                                    <p>
+
+                                        About the software
+
+                                        <div class="left-line">
+
+                                            <v-text-field
+                                              v-model="entry.name"
+                                              required
+                                            >
+                                                <template #label>
+                                                    Name <strong class="red--text">*</strong>
+                                                </template>
+                                            </v-text-field>
+                                            <v-text-field
+                                              v-model="entry.description"
+                                              label="One-line descripton"
+                                              hint="What makes this project unique?"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.url"
+                                              label="Front page"
+                                              hint="e.g. &ldquo;https://www.example.com&rdquo;"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.dev_url"
+                                              label="Developer site"
+                                              hint="e.g. &ldquo;https://github.com/my-sleep-app/&rdquo;"
+                                            ></v-text-field>
+                                            <v-text-field
+                                              v-model="entry.admin_contact"
+                                              label="Administrative contact"
+                                              hint="How would we contact you about changes to our site?"
+                                            ></v-text-field>
+
+                                        </div>
+
+                                    </p>
+
+                                    <v-combobox
+                                      v-model="entry.platforms"
+                                      :items="platforms"
+                                      label="Available for..."
+                                      multiple
+                                      small-chips
+                                      >
+                                      <template v-slot:selection="data">
+                                        <v-chip
+                                          :key="JSON.stringify(data.item)"
+                                          v-bind="data.attrs"
+                                          :input-value="data.selected"
+                                          :disabled="data.disabled"
+                                          >
+                                          <v-avatar
+                                            class="accent white--text"
+                                            left
+                                            v-if="platform_icons[data.item]"
+                                            >
+                                            <v-icon>{{ platform_icons[data.item] }}</v-icon>
+                                          </v-avatar>
+                                          {{ data.item }}
+                                        </v-chip>
+                                      </template>
+                                    </v-combobox>
+
+                                    <p>
+
+                                        The app&hellip; <strong class="red--text">*</strong>
+
+                                        <v-radio-group
+                                          v-model="entry.business_model"
+                                          class="left-line mt-0 mb-0"
+                                          hide-details
+                                          >
+                                            <v-radio
+                                              label="&hellip; is open source"
+                                              value="open-source"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; is free, but closed source"
+                                              value="free"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; is ad-supported"
+                                              value="ad-supported"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; requires payment, but has a free trial"
+                                              value="trial"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; requires payment"
+                                              value="paid"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; is free with a device (e.g. a smart watch)"
+                                              value="device"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; has another business model (specified below)"
+                                              value="other"
+                                            ></v-radio>
+                                        </v-radio-group>
+
+                                        <v-expand-transition>
+                                          <v-textarea
+                                            v-model="entry.business_model_other"
+                                            v-show="entry.business_model == 'other'"
+                                            label="Other business model"
+                                            hide-details
+                                            ></v-textarea>
+                                        </v-expand-transition>
+
+                                    </p>
+
+                                    <p>
+                                        <v-textarea
+                                          v-model="entry.procedure"
+                                          placeholder="1. [install the app](https://my-sleep-app.com/download)
+2. follow the on-screen instructions"
+                                          hide-details
+                                        >
+                                            <template #label>
+                                                Procedure to get/use the app <strong class="red--text">*</strong>
+                                            </template>
+                                        </v-textarea>
+                                    </p>
+
+                                    <v-btn
+                                      color="primary"
+                                      @click="current_step = 2"
+                                      :disabled="step_1_incomplete"
+                                    >
+                                        Continue
+                                    </v-btn>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_2_incomplete"
+                              editable
+                              step="2"
+                            >
+                                Main screenshot
+                                <small>Image of your app in action</small>
+                            </v-stepper-step>
+
+                            <v-stepper-content step="2">
+                                <div class="pl-2 pr-4">
+
+                                    Your screenshot must...
+                                    <ul class="left-line mb-4">
+                                        <li>be maximised if possible</li>
+                                        <li>not show anything other than the app itself</li>
+                                        <li>not show personally-identifying information<br/>(e.g. a folder with your name in it)</li>
+                                    </ul>
+                                    To take a screenshot...
+                                    <ul class="left-line mb-4">
+                                        <li><v-icon>mdi-microsoft-windows</v-icon> <a href="https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b">Snipping Tool</a></li>
+                                        <li><v-icon>mdi-android</v-icon> <a href="https://support.google.com/android/answer/9075928?hl=en-GB">take a screenshot</a></li>
+                                        <li><v-icon>mdi-apple-ios</v-icon> <a href="https://support.apple.com/en-gb/HT200289">take a screenshot</a></li>
+                                    </ul>
+
+                                    <p>
+
+                                        The main in-app screenshot...&hellip; <strong class="red--text">*</strong>
+
+                                        <v-radio-group
+                                          v-model="screenshot_location"
+                                          class="left-line mt-0 mb-0"
+                                          hide-details
+                                        >
+                                            <v-radio
+                                              label="&hellip; is at an address specified below"
+                                              value="url"
+                                            ></v-radio>
+                                            <v-radio
+                                              label="&hellip; will be attached to the report when I send it"
+                                              value="attached"
+                                            ></v-radio>
+                                        </v-radio-group>
+
+                                        <v-expand-transition>
+                                            <v-text-field
+                                              v-model="entry.screenshot_url"
+                                              v-show="screenshot_location == 'url'"
+                                              label="Screenshot URL"
+                                              hide-details
+                                            ></v-text-field>
+                                        </v-expand-transition>
+
+                                    </p>
+
+                                    <v-btn
+                                      color="primary"
+                                      @click="current_step = 3"
+                                      :disabled="step_2_incomplete"
+                                    >
+                                        Continue
+                                    </v-btn>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_3_incomplete"
+                              editable
+                              step="3"
+                            >
+                                Forms and reports
+                                <small>Common paperwork</small>
+                            </v-stepper-step>
+
+                            <v-stepper-content step="3">
+                                <div class="pl-2 pr-4">
+
+                                <v-expansion-panels
+                                  v-model="doc_panels"
+                                  style="max-width: calc(100% - 24px); margin: 12px 0 0 12px"
+                                  multiple
+                                >
+                                    <v-expansion-panel
+                                      v-for="(doc,n) in docs"
+                                      :key="doc.id"
+                                      :style="doc.deleted?'opacity:0.5':''"
+                                    >
+
+                                        <v-expansion-panel-header>{{doc.name || 'document #' + (n+1) }}</v-expansion-panel-header>
+
+                                        <v-expansion-panel-content>
+
+                                            <div style="text-align:right">
+                                                <v-icon
+                                                  :disabled="n==0"
+                                                  @click="item_up(docs,n)"
+                                                  style="margin:0 2px"
+                                                >
+                                                    mdi-arrow-up
+                                                </v-icon>
+                                                <v-icon
+                                                  :disabled="n==docs.length-1"
+                                                  @click="item_down(docs,n)"
+                                                  style="margin:0 2px"
+                                                >
+                                                    mdi-arrow-down
+                                                </v-icon>
+                                                <v-icon
+                                                  @click="item_delete_toggle(doc)"
+                                                  v-html="'mdi-delete'+(doc.deleted?'-off':'')"
+                                                  style="margin:0 2px"
+                                                ></v-icon>
+                                            </div>
+
+                                            <v-text-field
+                                              v-model="doc.name"
+                                              label="Name of the document"
+                                              hint="e.g. &ldquo;Sleep diary&rdquo;"
+                                            ></v-text-field>
+
+
+                                            <p>
+
+                                                This document is&hellip; <strong class="red--text">*</strong>
+
+                                                <v-radio-group
+                                                  v-model="doc.doc_type"
+                                                  class="left-line mt-0 mb-0"
+                                                  hide-details
+                                                >
+                                                    <v-radio
+                                                      label="&hellip; a form (to fill in with observations)"
+                                                      value="form"
+                                                    ></v-radio>
+                                                    <v-radio
+                                                      label="&hellip; a report (gives answers based on observations)"
+                                                      value="report"
+                                                    ></v-radio>
+                                                </v-radio-group>
+
+                                            </p>
+
+                                            <div class="mb-4">
+
+                                                I can provide&hellip; <strong class="red--text">*</strong>
+
+                                                <v-radio-group
+                                                  v-model="doc.sharing_status"
+                                                  class="left-line mt-0 mb-0"
+                                                  hide-details
+                                                >
+                                                    <v-radio
+                                                      value="found online"
+                                                      label="instructions to find this on the organisation's website (recommended)"
+                                                    ></v-radio>
+                                                    <v-radio
+                                                      value="shared with consent"
+                                                    >
+                                                        <template #label v-if="doc.doc_type=='form'">
+                                                            a blank example the organisation has consented to put online
+                                                        </template>
+                                                        <template #label v-else>
+                                                            examples based on&nbsp; <a href="common_sleep_diaries" @click="set_location('common_sleep_diaries')">our common sleep diaries</a>
+                                                        </template>
+
+                                                    </v-radio>
+                                                    <v-radio
+                                                      value="private"
+                                                      label="a document containing my personal information, or which the organisation has not yet made public"
+                                                    ></v-radio>
+                                                </v-radio-group>
+
+                                                <v-expand-transition>
+                                                    <div v-show="doc.sharing_status=='found online'">
+
+                                                        <v-text-field
+                                                          v-model="doc.url"
+                                                          hint="e.g. &ldquo;https://www.example.com/sleep-diary.pdf&rdquo;"
+                                                        >
+                                                            <template #label>
+                                                                Direct link <strong class="red--text">*</strong>
+                                                            </template>
+                                                        </v-text-field>
+
+                                                        <v-textarea
+                                                          v-model="doc.instructions_to_find"
+                                                          placeholder="1. Go to https://www.example.com
+2. click on 'patient forms' in the menu at the top
+3. click the 'sleep diary' option in the menu"
+                                                        >
+                                                            <template #label>
+                                                                How to find the document <strong class="red--text">*</strong>
+                                                            </template>
+                                                        </v-textarea>
+
+                                                        <v-expand-transition>
+                                                            <v-alert
+                                                              v-show="doc.instructions_to_find.search(/^\s*https?:\/+[^\/]+\/\S+\.\S+\s*$/)==0"
+                                                              border="left"
+                                                              type="warning"
+                                                            >
+                                                                Please provide instructions to find the document organically, not just a link.<br/>
+                                                                That way we can update the documentation when new documents come out.
+                                                            </v-alert>
+                                                        </v-expand-transition>
+
+                                                    </div>
+                                                </v-expand-transition>
+
+                                                <v-expand-transition>
+                                                    <v-alert
+                                                      v-show="doc.sharing_status=='shared with consent'"
+                                                      border="left"
+                                                      type="success"
+                                                    >
+                                                        You can upload documents in the GitHub issue.
+                                                    </v-alert>
+                                                </v-expand-transition>
+
+                                                <v-expand-transition>
+                                                    <v-alert
+                                                      v-show="doc.sharing_status=='private'"
+                                                      border="left"
+                                                      type="warning"
+                                                    >
+                                                        Documents with private or personal information can't be used publicly.<br/>
+                                                        You'll need to get blank forms, or reports with <a href="/sleepdiary/resources/blob/main/common_sleep_diaries/">our computer-generated datasets</a>
+                                                    </v-alert>
+                                                </v-expand-transition>
+
+                                            </div>
+
+                                        </v-expansion-panel-content>
+
+                                    </v-expansion-panel>
+
+                                </v-expansion-panels>
+
+                                    <div>
+                                        <v-btn
+                                          color="primary"
+                                          class="ma-3"
+                                          @click="add_doc"
+                                          style="left: calc( 100% - 24px );transform:translateX(-100%)"
+                                        >
+                                            <v-icon>mdi-plus</v-icon> Add document
+                                        </v-btn>
+                                    </div>
+
+                                    <v-card-actions>
+                                        <v-btn
+                                          color="primary"
+                                          @click="current_step = 4"
+                                          :disabled="step_3_incomplete"
+                                        >
+                                            Continue
+                                        </v-btn>
+                                    </v-card-actions>
+                                </div>
+                            </v-stepper-content>
+
+                            <v-stepper-step
+                              :complete="!step_4_incomplete"
+                              step="4"
+                              editable
+                            >
+                                Create GitHub issue
+                                <small>&hellip; or download raw data</small>
+                            </v-stepper-step>
+                            <v-stepper-content step="4">
+                                <div class="pl-2 pr-4">
+
+                                    <p>Click <em>Continue to GitHub</em> to start creating a GitHub issue.  You can edit your issue before submitting, and you can attach files by dragging & dropping, selecting or pasting them.</p>
+
+                                    <p>Or if you're already in contact with a developer, you can click <em>Download</em> and send them your information directly</p>
+
+                                    <v-card-actions>
+                                        <v-btn
+                                          color="primary"
+                                          :disabled="step_4_incomplete"
+                                          :href="submit_url"
+                                        >
+                                            <v-icon>mdi-github</v-icon> Continue to GitHub
+                                        </v-btn>
+                                        <v-spacer></v-spacer>
+                                        <v-btn
+                                          color="secondary"
+                                          :disabled="step_4_incomplete"
+                                          :href="download_data"
+                                          download="new-software.json"
+                                        >
+                                            <v-icon>mdi-download</v-icon> Download
+                                        </v-btn>
+
+                                    </v-card-actions>
+                                </div>
+                            </v-stepper-content>
+
+                        </v-stepper>
+                    </v-card>
+
+                    <v-btn
+                      class="mt-2"
+                      style="width:100%"
+                      @click="license_dialog = true"
+                    >
+                        <v-icon>mdi-copyright</v-icon> Page released under a CC0 license
+                    </v-btn>
+                    <v-dialog
+                      v-model="license_dialog"
+                      max-width="500"
+                    >
+                        <v-card>
+                            <v-card-title class="text-h5 grey lighten-2">
+                                Released under a CC0 license
+                            </v-card-title>
+
+                            <v-card-text class="pa-3">
+                                <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+                                    <a rel="license"
+                                       href="http://creativecommons.org/publicdomain/zero/1.0/">
+                                        <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+                                    </a>
+                                    <br />
+                                    To the extent possible under law,
+                                    <a rel="dct:publisher"
+                                       href="https://sleepdiary.github.io/resources/">
+                                        <span property="dct:title">Sleep Diary Authors</span></a>
+                                    has waived all copyright and related or neighboring rights to
+                                    <span property="dct:title">Sleep Diary Resources</span>.
+                                    This work is published from:
+                                    <span property="vcard:Country" datatype="dct:ISO3166"
+                                          content="GB" about="https://sleepdiary.github.io/resources/">
+                                        United Kingdom</span>.
+                                </p>
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <v-card-actions>
+                                <v-btn
+                                  color="primary"
+                                  text
+                                  href="https://github.com/sleepdiary/resources"
+                                >
+                                    source code
+                                </v-btn>
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                  color="primary"
+                                  text
+                                  @click="license_dialog = false"
+                                >
+                                    close
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+
+                    </div>
+
+                </v-main>
+            </v-app>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+        <script>
+        "use strict";
+        new Vue({
+          el: '#app-container',
+          vuetify: new Vuetify(),
+          data: () => ({
+            current_step: (
+              sessionStorage.getItem('current_step')
+              ? parseInt(sessionStorage.getItem('current_step'))
+              : 1
+            ),
+
+            entry: (
+              sessionStorage.getItem('entry')
+              ? JSON.parse(sessionStorage.getItem('entry'))
+              : {
+                // step 1:
+                name: '',
+                description: '',
+                url: '',
+                platforms: [],
+                admin_contact: '',
+                business_model: undefined,
+                business_model_other: '',
+
+                // step 2:
+                screenshot_url: '',
+                graph: [],
+              }
+            ),
+
+            // step 1:
+            platforms: [
+                'Windows',
+                'MacOS',
+                'Linux',
+                'Android',
+                'iOS',
+                'website',
+                'dedicated device (e.g. a watch)',
+            ],
+            platform_icons: {
+              Windows: 'mdi-microsoft-windows',
+              MacOS  : 'mdi-apple',
+              Linux  : 'mdi-linux',
+              Android: 'mdi-android',
+              iOS    : 'mdi-apple-ios',
+              website: 'mdi-web',
+              'dedicated device (e.g. a watch)': 'mdi-devices',
+            },
+
+            // step 2:
+            screenshot_location: (
+              sessionStorage.getItem('screenshot_location')
+              ? JSON.parse(sessionStorage.getItem('screenshot_location'))
+              : undefined
+            ),
+
+            // step 3:
+            docs: (
+              sessionStorage.getItem('docs')
+              ? JSON.parse(sessionStorage.getItem('docs'))
+              : []
+            ),
+            doc_panels: [],
+
+            // license:
+            license_dialog: false,
+
+          }),
+          mounted() {
+            document.getElementById("app-container").className += " mounted";
+          },
+          methods: {
+            add_doc() {
+              this.docs.push({id:new Date().getTime(),sharing_status:undefined,deleted:false,instructions_to_find:''});
+              this.doc_panels.push(this.docs.length-1);
+            },
+            item_up( list, n ) {
+              const item = list[n];
+              list.splice( n  , 1 );
+              list.splice( n-1, 0, item );
+            },
+            item_down( list, n ) {
+              const item = list[n];
+              list.splice( n  , 1 );
+              list.splice( n+1, 0, item );
+            },
+            item_delete_toggle( elem ) {
+              elem.deleted ^= true;
+            },
+            set_location(loc) {
+              window.location=loc;
+            },
+          },
+          watch: {
+            current_step() {
+                sessionStorage.setItem('current_step',this.current_step)
+            },
+            screenshot_location() {
+                sessionStorage.setItem('screenshot_location',this.screenshot_location)
+            },
+            entry: {
+              handler() {
+                sessionStorage.setItem('entry',JSON.stringify(this.entry))
+              },
+              deep: true,
+            },
+            docs: {
+              handler() {
+                sessionStorage.setItem('docs',JSON.stringify(this.docs.filter( entry => !entry.deleted )))
+              },
+              deep: true,
+            },
+          },
+          computed: {
+            step_1_incomplete() {
+              return (
+                !this.entry.name ||
+                !this.entry.business_model ||
+                !this.entry.procedure ||
+                ( this.entry.business_model == 'other' && ! entry.business_model_other )
+              );
+            },
+            step_2_incomplete() {
+              return (
+                !this.screenshot_location ||
+                ( this.screenshot_location == 'url' && !this.entry.screenshot_url )
+              );
+            },
+            step_3_incomplete() {
+              return this.docs.some(
+                doc => !doc.doc_type
+                  || !doc.sharing_status
+                  || ( doc.sharing_status == 'found online'
+                    && ( !doc.url || !doc.instructions_to_find )
+                  )
+              );
+            },
+            step_4_incomplete() {
+              return (
+                this.step_1_incomplete ||
+                this.step_2_incomplete ||
+                this.step_3_incomplete
+              );
+            },
+            preamble() {
+              let shared_with_consent = this.docs.filter( doc => doc.sharing_status == 'shared with consent' ).length,
+                  shared_private      = this.docs.filter( doc => doc.sharing_status == 'private'             ).length,
+                  preamble = `I would like to add an entry to [the list of software](../blob/main/entities/software).\n\n`;
+              ;
+              if ( shared_with_consent ) {
+                preamble += "I have attached ";
+                if ( shared_with_consent == 1 ) {
+                  preamble += "a document"
+                } else {
+                  preamble += shared_with_consent + " documents";
+                }
+                preamble += " the organisation has consented to make available online.\n(see beneath this text box for instructions about attaching documents)\n\n";
+              }
+              if ( shared_private ) {
+                preamble += "I have access to ";
+                if ( shared_private == 1 ) {
+                  preamble += "a document"
+                } else {
+                  preamble += shared_private + " documents";
+                }
+                preamble += " with private or personal information on it.  Let's talk about what we can do with it.\n\n";
+              };
+              return preamble;
+            },
+            json() {
+              const tidy_entry = entry => {
+                      const ret = Object.assign({},entry);
+                      return ret;
+                    },
+                    tidy_items = items => (
+                      items
+                        .filter( entry => !entry.deleted )
+                        .map( item => {
+                          const ret = Object.assign({},item);
+                          delete ret.id;
+                          delete ret.deleted;
+                          delete ret.doc_type;
+                          if ( ret.sharing_status && ret.sharing_status != 'found online' ) {
+                            delete ret.url;
+                            delete ret.instructions_to_find;
+                          }
+                          Object.keys(ret)
+                                .filter( key => typeof(ret[key]) == "string" && ret[key].search(/\n/) == -1 )
+                                .forEach( key => ret[key] = ret[key].replace( /^ *| *$/g, '' ) )
+                          return ret;
+                        })
+                    ),
+                    json = JSON.stringify(
+                      Object.assign(
+                        {},
+                        tidy_entry(this.entry),
+                        {
+                          forms    : tidy_items(this.docs.filter( doc => doc.doc_type == 'form' )),
+                          reports  : tidy_items(this.docs.filter( doc => doc.doc_type == 'report' )),
+                        },
+                      ),
+                      null, '  '
+                    );
+              ;
+              return json;
+            },
+            issue_body() {
+              return `${this.preamble}(text below this line comes from the form you just filled out - please don't edit it here)
+
+---------------------
+
+<details><summary>Entry data</summary>
+
+\`\`\`
+${this.json}
+\`\`\`
+
+</details>
+`;
+            },
+            download_data() {
+              return URL.createObjectURL(
+                new Blob(
+                  [`/*\n\n${this.preamble}*/\n${this.json}`],
+                  {type : 'application/octet-stream'}
+                )
+              );
+            },
+            submit_url() {
+              return 'https://github.com/andrew-sayers/resources/issues/new?title=New+software:+'+encodeURIComponent(this.entry.name)+'&body='+encodeURIComponent(this.issue_body);
+            },
+          },
+        });
+        </script>
+
+    </body>
+</html>

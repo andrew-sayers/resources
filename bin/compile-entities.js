@@ -10,7 +10,7 @@ const url   = require('url');
 const base_dir = __filename.replace(/[^\/]+\/[^\/]*$/,'');
 
 const output = {
-    format      : 'https://sleepdiary.github.io/resources/entities#version-001',
+    format      : 'https://sleepdiary.github.io/resources/entities#version-002',
     specialist  : { records: [] },
     software    : { records: [] },
     valid_values: JSON.parse(fs.readFileSync("entities/valid_values.json"))

@@ -503,8 +503,15 @@
                                                     ></v-radio>
                                                     <v-radio
                                                       value="shared with consent"
-                                                      label="a blank example the organisation has consented to put online"
-                                                    ></v-radio>
+                                                    >
+                                                        <template #label v-if="doc.doc_type=='form'">
+                                                            a blank example the organisation has consented to put online
+                                                        </template>
+                                                        <template #label v-else>
+                                                            examples based on&nbsp; <a href="common_sleep_diaries" @click="set_location('common_sleep_diaries')">our common sleep diaries</a>
+                                                        </template>
+
+                                                    </v-radio>
                                                     <v-radio
                                                       value="private"
                                                       label="a document containing my personal information, or which the organisation has not yet made public"
@@ -554,8 +561,7 @@
                                                       border="left"
                                                       type="success"
                                                     >
-                                                        You can upload documents on the next page.<br/>
-                                                        Make sure all reports use <a href="/sleepdiary/resources/blob/main/common_sleep_diaries/">our computer-generated datasets</a>
+                                                        You can upload documents in the GitHub issue.
                                                     </v-alert>
                                                 </v-expand-transition>
 

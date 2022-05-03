@@ -36,12 +36,28 @@
       "how_received": "shared with consent",
       "inbed_marker": "(none)",
       "layout": "calendar",
-      "modifiers": {
-        "cyan_bar": "forced awakening",
-        "green_bar": "delayed retirement",
-        "grey_bar": "delayed retirement and forced awakening",
-        "yellow_bar": "selected sleep"
-      },
+      "modifiers": [
+        {
+          "component": "bar",
+          "colour": "cyan",
+          "description": "forced awakening"
+        },
+        {
+          "component": "bar",
+          "colour": "green",
+          "description": "delayed retirement"
+        },
+        {
+          "component": "bar",
+          "colour": "grey",
+          "description": "delayed retirement and forced awakening"
+        },
+        {
+          "component": "bar",
+          "colour": "yellow",
+          "description": "selected sleep"
+        }
+      ],
       "name": "Sleep log",
       "outofbed_marker": "(none)",
       "page_duration": "variable",

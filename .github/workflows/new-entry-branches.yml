@@ -63,11 +63,6 @@ jobs:
                         })
                     );
 
-                    todo_list += `- [ ] Remove TODO items
-            - [ ] Merge the issue branch into the main branch
-            - [ ] [Generate docs from resources](../../docs/actions/workflows/generate-from-resources.yml)
-            - [ ] Any last checks/process improvements`
-
                     let entry_text = JSON.stringify(entry,null,'  ');
                     entry_text = (
                         entry_text
@@ -97,7 +92,15 @@ jobs:
             #            "key": # e.g. "C"
             #            "value": # e.g. "coffee, cola, or tea"
             #          },
-            #             ...
+            #          ...
+            #         ],
+            #         "modifiers": [
+            #           {
+            #             "component": "bar",
+            #             "colour": "", # e.g. "green"
+            #             "description": "" # e.g. "delayed retirement"
+            #           },
+            #           ...
             #         ]`
                             )
                             .replace(
@@ -106,6 +109,19 @@ jobs:
                             )
                             .replace( /\n*$/, "\n" )
                     );
+
+                    if ( entity_type == 'software' ) {
+                        todo_list += `- [ ] Add file_format\n`;
+                        entry_text = entry_text.replace(
+                            /(\n  "description":)/,
+                            "\n#  \"file_format\": \"\", # TODO: add URL within the core repo"
+                        );
+                    }
+
+                    todo_list += `- [ ] Remove TODO items
+            - [ ] Merge the issue branch into the main branch
+            - [ ] [Generate docs from resources](../../docs/actions/workflows/generate-from-resources.yml)
+            - [ ] Any last checks/process improvements`;
 
                     const filename = `entities/${entity_type}/${now.getTime()}-${entry.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.json`;
                     fs.writeFileSync(filename, entry_text);
@@ -136,4 +152,3 @@ jobs:
 
                 })
             );
-

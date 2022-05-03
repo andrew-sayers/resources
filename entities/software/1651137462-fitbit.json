@@ -12,5 +12,6 @@
   ],
   "procedure": "1. buy a Fitbit device\n2. download the [Android app](https://play.google.com/store/apps/details?id=com.fitbit.FitbitMobile&hl=en_GB&gl=US) or [iOS app](https://apps.apple.com/us/app/fitbit-health-fitness/id462638897)\n3. link your device with the app, so the device can upload reports through it\n4. use the app or [the website's sleep page](https://www.fitbit.com/sleep)\n",
   "thumb": "/resources/thumbs/Fitbit.jpg",
-  "url": "https://www.fitbit.com/"
+  "url": "https://www.fitbit.com/",
+  "dev_url": "https://dev.fitbit.com/"
 }
